@@ -1,15 +1,10 @@
-//  import React from 'react';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import MainPage from '../../../pages/MainPage';
 
+import AuthPage from '../../../pages/AuthPage'
 
 function App() {
-        return (
-            <h1>Welcome to Hell!</h1>
-            // <Router>
-            //     <Route path="/" component={MainPage} />
-            // </Router>
-        )
+    return ( 
+    <AuthPage />
+    )
 }
 
 export default App;

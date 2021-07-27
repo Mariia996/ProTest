@@ -3,10 +3,20 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from '../../../client/Navbar'
 
+import PublicPage from '../PublicRoute'
+const AuthPage = lazy(() => import('../../../pages/AuthPage') /* webpackChunkName: "AuthPage" */);
+
 import { routes } from './routes';
 
 function App() {
-    return (<h1>Welcome to Hell!</h1>)
+    const { auth, contacts, main, test, results, materials } = routes;
+    return (<Router>
+        <Suspense />
+        <Navbar />
+        <Switch>
+            <PublicPage exact path={auth} restricted component={} />
+        </Switch>
+    </Router>)
 }
 
 export default App;

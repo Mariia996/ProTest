@@ -1,0 +1,27 @@
+@import "src/shared/styles/base";
+.btn {
+  background-color: #FF6B09;
+  border-color: transparent;
+  cursor: pointer;
+  width: 109px;
+  height: 60px;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: background 250ms linear;
+  &:hover {
+    background: #FF6B09;
+  }
+}
+@include tablet {
+  .btn {
+    width: 201px;
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}

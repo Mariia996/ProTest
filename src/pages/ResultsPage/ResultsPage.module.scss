@@ -1,0 +1,129 @@
+@import "src/shared/styles/base";
+@import "src/shared/styles/common";
+
+.resultPage{
+    &Container{
+        @include flex(center, center);
+        flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        @include tablet {
+            margin-top: 41px;
+            margin-bottom: 107px;
+        }
+        @include desktop {
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+    }
+    &Title{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 2.5;
+        text-align: center;
+        @include tablet {
+            font-size: 22px;
+            line-height: 1.36;
+        }
+    }
+    &Text{
+        font-size: 10px;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        @include tablet{
+            font-size: 14px;
+            line-height: 1.21;
+        }
+    &::after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 130px;
+        margin-top: 20px;
+        border: 1px solid rgba(0, 18, 47, 0.15);
+        @include tablet{
+            width: 322px;
+            margin-top: 30px;
+        }
+      }
+    }
+    &Btn{
+        width: 190px;
+        height: 48px;
+        margin-top: 21px;
+        @include tablet {
+            margin-top: 47px;
+        }
+    }
+    &Image{
+        margin-top: 17px;
+        @include tablet{
+            width: 176px;
+            height: 176px;
+            margin-top: 29px;
+        }
+    }
+}
+
+.result{
+    &List{
+        @include flex(center,center);
+        margin-top: 20px;
+        @include tablet{
+            margin-top: 30px;
+        }
+    }
+    &Item{
+    font-size: 10px;
+    line-height: 1.2;
+    @include tablet{
+        font-size: 16px;
+        line-height: 1.25;
+    }
+    &:not(:last-child) {
+        &::after {
+          content: "";
+          height: 19px;
+          border: 1px solid rgba(0, 18, 47, 0.15);
+          margin-right: 10px;
+          margin-left: 10px;
+        }
+      }
+    }
+    &Title{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.87;
+        text-align: center;
+        margin-top: 21px;
+        @include tablet{
+            font-size: 22px;
+            line-height: 1.36;
+            margin-top: 10px;
+        }
+    }
+    &Text{
+        font-size: 10px;
+        line-height: 1.2;
+        text-align: center;
+        margin-top: 10px;
+        @include tablet{
+            font-size: 20px;
+            line-height: 1.2;
+        }
+    }
+    &Wrapper{
+        @include flex(center, center);
+        flex-direction: column;
+    }
+    &Point{
+        font-weight: 700;
+    }
+}
+
+.diagram {
+    @include flex(center, center);
+}
+  

@@ -53,6 +53,10 @@
         width: 190px;
         height: 48px;
         margin-top: 21px;
+        border: none;
+        color: #FFFFFF;
+        text-transform: capitalize;
+        background-color: #FF6B09;
         @include tablet {
             margin-top: 47px;
         }

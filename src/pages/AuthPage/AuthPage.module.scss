@@ -9,10 +9,6 @@
             margin-top: 80px;
             margin-bottom: 70px;
         }
-        @include desktop{
-            margin-top: 99px;
-            margin-bottom: 99px;
-        }
     }
     &TextWrapper{
         @include desktop{
@@ -59,7 +55,7 @@
 
 .wrapper{
     @include desktop {
-        @include flex(center, center);
+        @include flex(center,center);
         margin-right: 125px;
         margin-left: 125px;
         

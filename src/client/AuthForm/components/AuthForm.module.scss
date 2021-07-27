@@ -49,6 +49,7 @@
     width: 159px;
     height: 51px;
     background: #FAFAFA;
+    border: none;
     color: #000000;
     margin-bottom: 30px;
     font-weight: 700;
@@ -56,14 +57,15 @@
     line-height: 1.21;
     letter-spacing: 0.02em;
     text-align: center;
-    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
+    text-transform: capitalize;
+    box-shadow: 0px, 2px, 2px, rgba(0,0,0, 0.1);
     @include tablet{
         margin-bottom: 40px;
     }
     &Container{
         @include flex(center, center);
         @include tablet{
-            @include flex(flex-start, center)
+            @include flex(start, center)
         }
     }
   }

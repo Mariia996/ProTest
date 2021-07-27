@@ -1,0 +1,87 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+.wrapper {
+  padding-top: 30px;
+  padding-bottom: 33px;
+}
+
+.text_choice_test {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.67;
+  color: $primary-text-color;
+  text-align: center;
+}
+
+.line {
+  width: 130px;
+  border: 1px solid #00122f;
+  opacity: 0.15;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.creator_name {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+  color: $primary-text-color;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.text_about_creator {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  color: $secondary-text-color;
+  text-align: center;
+}
+
+.wrapper_for_tests {
+  padding-top: 40px;
+}
+
+@include tablet {
+  .wrapper {
+    padding-top: 80px;
+    padding-bottom: 112px;
+  }
+
+  .text_choice_test {
+    font-size: 22px;
+  }
+
+  .line {
+    width: 321px;
+    margin-bottom: 13px;
+  }
+
+  .creator_name {
+    font-size: 18px;
+    line-height: 2;
+  }
+
+  .text_about_creator {
+    font-size: 14px;
+    line-height: 2.57;
+  }
+
+  .wrapper_for_tests {
+    @include flex(center, center);
+    padding-top: 40px;
+  }
+}
+@include desktop {
+  .wrapper {
+    padding-top: 122px;
+    padding-bottom: 114px;
+  }
+  .line {
+    margin-top: 30px;
+  }
+  .wrapper_for_tests {
+    padding-top: 84px;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import styles from './SelectTestItem.module.scss';
-import { ReactComponent as ArrowIcon } from '../../../../icons/arrow.svg';
+import { ReactComponent as ArrowIcon } from '../../../../images/main-page/arrow.svg';
 
 const SelectTestItem = ({to, text}) => {
     return (

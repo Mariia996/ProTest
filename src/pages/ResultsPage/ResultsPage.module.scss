@@ -128,6 +128,38 @@
 }
 
 .diagram {
+    &Wrapper{
+        @include flex(flex-end, center);  
+    }
     @include flex(center, center);
 }
   
+.percentage{
+    &Wrapper{
+        @include flex(center, center);
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    &Correct{
+        width: 14px;
+        height: 14px;
+        background-color: #FF6B09;
+    }
+    &Incorrect{
+        width: 14px;
+        height: 14px;
+        background: #D7D7D7; 
+    }
+    &Text{
+        font-size: 8px;
+        line-height: 1.25;
+        // &::before{
+        //     display: block;
+        //     content: "";
+        //     width: 14px;
+        //     height: 14px;
+        //     background-color: #FF6B09;
+        // }
+    }
+}

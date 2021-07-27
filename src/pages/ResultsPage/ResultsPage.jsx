@@ -9,10 +9,17 @@ const ResultsPage = () => {
     <div className={`${styles.resultPageContainer} ${styles.container}`}>
         <h2 className={styles.resultPageTitle}>Results</h2>
         <p className={styles.resultPageText}>[ Testing theory_]</p>
-        <div className={styles.diagram}>
-           <Diagram/>  
+        <div className={styles.diagramWrapper}>
+            <div className={styles.diagram}>
+              <Diagram/>
+            </div> 
+            <div className={styles.percentageWrapper}>
+                <span className={styles.percentageCorrect}></span>
+                <p className={styles.percentageText}> 92% Correct</p>
+                <span className={styles.percentageIncorrect}></span>
+                <p className={styles.percentageText}> 8% Incorrect</p>  
+            </div>  
         </div>
-        
         <ul className={styles.resultList}>
             <li className={styles.resultItem}>Correct answers - <span className={styles.resultPoint}>9</span></li>
             <li className={styles.resultItem}>Total questions - <span className={styles.resultPoint}>12</span></li>

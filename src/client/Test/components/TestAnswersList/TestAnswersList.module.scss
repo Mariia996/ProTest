@@ -30,8 +30,8 @@
       input[type='radio']:checked + & {
         background-image: url('../../../../images/test-page/ellipse.jpg');
         background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 50% 50%;
+        background-position: center;
+        background-size: 10px 10px;
       }
     }
   }

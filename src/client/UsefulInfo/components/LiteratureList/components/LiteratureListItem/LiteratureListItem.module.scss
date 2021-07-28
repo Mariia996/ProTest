@@ -1,0 +1,17 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+.item {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.6;
+  color: $primary-text-color;
+  list-style: decimal;
+}
+
+@include tablet {
+  .item {
+    font-size: 14px;
+    line-height: 1.57;
+  }
+}

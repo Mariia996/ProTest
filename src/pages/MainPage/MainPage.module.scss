@@ -12,14 +12,16 @@
   line-height: 1.67;
   color: $primary-text-color;
   text-align: center;
-}
 
-.line {
-  width: 130px;
-  border: 1px solid #00122f;
-  opacity: 0.15;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  &::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    height: 1px;
+    margin-top: 20px;
+    background-color: $line-color;
+  }
 }
 
 .creator_name {
@@ -28,6 +30,7 @@
   line-height: 1.67;
   color: $primary-text-color;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 4px;
 }
 
@@ -40,7 +43,7 @@
 }
 
 .wrapper_for_tests {
-  padding-top: 40px;
+  margin-top: 40px;
 }
 
 @include tablet {
@@ -51,16 +54,16 @@
 
   .text_choice_test {
     font-size: 22px;
-  }
 
-  .line {
-    width: 321px;
-    margin-bottom: 13px;
+    &::after {
+      width: 321px;
+    }
   }
 
   .creator_name {
     font-size: 18px;
     line-height: 2;
+    margin-top: 13px;
   }
 
   .text_about_creator {
@@ -70,7 +73,7 @@
 
   .wrapper_for_tests {
     @include flex(center, center);
-    padding-top: 40px;
+    margin-top: 40px;
   }
 }
 @include desktop {
@@ -78,10 +81,14 @@
     padding-top: 122px;
     padding-bottom: 114px;
   }
-  .line {
-    margin-top: 30px;
+
+  .text_choice_test {
+    &::after {
+      margin-top: 30px;
+    }
   }
+
   .wrapper_for_tests {
-    padding-top: 84px;
+    margin-top: 84px;
   }
 }

@@ -1,0 +1,11 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+@include desktop {
+  .test_list {
+    @include flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-top: -20px;
+  }
+}

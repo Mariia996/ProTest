@@ -25,7 +25,7 @@
     display: block;
     width: 150px;
     height: 1px;
-    margin-top: 30px;
+    margin-top: 10px;
     background-color: $line-color;
   }
 }
@@ -46,7 +46,7 @@
     display: block;
     width: 150px;
     height: 1px;
-    margin-top: 30px;
+    margin-top: 10px;
     background-color: $line-color;
   }
 }
@@ -61,12 +61,13 @@
     .cover {
       width: 600px;
       background-image: url('../../images/useful-info-page/pic-tablet.jpeg');
+      background-size: 100% 100%;
     }
   }
 
   .wrapper_for_lists {
     padding-top: 119px;
-    padding-bottom: 416px;
+    padding-bottom: 380px;
     padding-left: 50px;
   }
 

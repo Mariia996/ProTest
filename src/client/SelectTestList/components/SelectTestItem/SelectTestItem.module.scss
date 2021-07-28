@@ -5,6 +5,7 @@
   width: 280px;
   height: 212px;
   background-color: $secondary-bg-color;
+  box-shadow: 0px 4px 15px rgba(18, 29, 46, 0.15);
   @include flex(center, center);
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -49,5 +50,8 @@
     flex-basis: calc(100% / 2 - 20px);
     margin-left: 20px;
     margin-top: 20px;
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 }

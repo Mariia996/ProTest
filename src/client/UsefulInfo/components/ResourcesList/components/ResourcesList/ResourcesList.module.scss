@@ -4,4 +4,7 @@
 .list {
   list-style: decimal;
   padding-left: 20px;
+  @include tablet {
+    padding-left: 80px;
+  }
 }

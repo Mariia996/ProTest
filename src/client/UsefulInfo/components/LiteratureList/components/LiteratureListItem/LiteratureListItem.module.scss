@@ -7,11 +7,14 @@
   line-height: 1.6;
   color: $primary-text-color;
   list-style: decimal;
-}
-
-@include tablet {
-  .item {
+  @include mobile-end {
+    width: 210px;
+  }
+  @include tablet {
     font-size: 14px;
     line-height: 1.57;
+  }
+  @include tablet-snippet {
+    width: 250px;
   }
 }

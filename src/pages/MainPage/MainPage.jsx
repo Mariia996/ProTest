@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectTest from '../../client/SelectTest/components';
+import SelectTestList from '../../client/SelectTestList/components/SelectTestList';
 import styles from './MainPage.module.scss';
 const MainPage = () => {
 
@@ -11,13 +11,10 @@ const MainPage = () => {
                     If the system compiles, that's good, 
                     if it boots, that's great!”
                 </p>
-
-                <hr className={styles.line}/>
-
                 <h3 className={styles.creator_name}>Linus Torvalds</h3>
                 <p className={styles.text_about_creator}>Linux kernel creator, hacker, 1969</p>
                 <div className={styles.wrapper_for_tests}>
-                    <SelectTest/>
+                    <SelectTestList/>
                 </div>
             </div> 
         </div>

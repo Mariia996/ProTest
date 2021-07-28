@@ -1,8 +1,7 @@
 @import 'src/shared/styles/_base';
 @import 'src/shared/styles/_styles';
 
-@include desktop {
-  .test_list {
-    @include flex;
-  }
+.list {
+  list-style: decimal;
+  padding-left: 20px;
 }

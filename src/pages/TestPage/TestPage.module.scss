@@ -6,17 +6,16 @@
   padding-bottom: 20px;
 }
 
-.titleContainer {
-  @include flex(space-between, center);
-  margin-bottom: 20px;
-}
-
 .title {
   font-size: 14px;
   line-height: 1.214;
   font-weight: 500;
   &Text {
     display: block;
+  }
+  &Container {
+    @include flex(space-between, center);
+    margin-bottom: 20px;
   }
 }
 
@@ -32,8 +31,84 @@
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: inherit;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
   &:focus {
     background-color: $accent-color;
+  }
+}
+
+.pagination {
+  @include flex(space-between);
+  margin-top: 20px;
+  &_btn {
+    width: 55px;
+    height: 34px;
+    border: none;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: 500;
+    text-transform: initial;
+  }
+
+  &_icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &_btn:hover .pagination_icon,
+  &_btn:focus .pagination_icon {
+    fill: $white-color;
+  }
+}
+
+.left_btn_icon {
+  margin-right: 10px;
+}
+
+@include mobile-end {
+  .pagination_btn_text {
+    display: none;
+  }
+}
+
+@include tablet {
+  .pagination {
+    &_btn {
+      width: 210px;
+      height: 34px;
+      @include flex(_, center);
+    }
+    &_btn:last-child {
+      @include flex(space-between, center);
+      padding-left: 20px;
+      padding-right: 15px;
+    }
+    &_btn:first-child {
+      padding-left: 15px;
+    }
+  }
+  .finishBtn {
+    width: 190px;
+    font-size: 14px;
+    line-height: 1.214;
+  }
+  .title {
+    font-size: 22px;
+    line-height: 1.227;
+  }
+  .titleContainer {
+    margin-bottom: 28px;
+  }
+  .wrapper {
+    padding-bottom: 270px;
+  }
+}
+
+@include desktop {
+  .wrapper {
+    margin: 0 auto;
+    width: 820px;
+    padding-bottom: 98px;
   }
 }

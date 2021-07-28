@@ -2,9 +2,15 @@
 @import '../../../../shared/styles/styles';
 
 .questions {
+  color: $secondary-text-color;
   font-size: 10px;
   line-height: 1.2;
   text-transform: uppercase;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 1.214;
+  }
 }
 
 .point {

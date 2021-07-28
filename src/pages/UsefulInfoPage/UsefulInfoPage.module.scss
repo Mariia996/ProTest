@@ -2,8 +2,11 @@
 @import 'src/shared/styles/_styles';
 
 .cover {
+  width: 320px;
+  margin: 0 auto;
   background-image: url('../../images/useful-info-page/pic-mobile.jpeg');
-  background-size: cover;
+  background-size: 100%, 100%;
+  background-repeat: no-repeat;
 }
 
 .wrapper_for_lists {
@@ -56,6 +59,7 @@
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     .cover {
+      width: 600px;
       background-image: url('../../images/useful-info-page/pic-tablet.jpeg');
     }
   }
@@ -97,6 +101,7 @@
 
 @include desktop {
   .cover {
+    width: 1280px;
     background-image: url('../../images/useful-info-page/pic-desktop.jpeg');
   }
 

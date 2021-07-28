@@ -1,2 +1,0 @@
-# ProTest
-GoIT project

@@ -1,0 +1,39 @@
+@import '../../shared/styles/base';
+@import '../../shared/styles/styles';
+
+.wrapper {
+  padding-top: 24px;
+  padding-bottom: 20px;
+}
+
+.titleContainer {
+  @include flex(space-between, center);
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 14px;
+  line-height: 1.214;
+  font-weight: 500;
+  &Text {
+    display: block;
+  }
+}
+
+.finishBtn {
+  width: 130px;
+  height: 48px;
+  background-color: $button-color;
+  border: none;
+  color: $white-color;
+  text-transform: initial;
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: inherit;
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}

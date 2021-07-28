@@ -1,0 +1,12 @@
+@import '../../../../shared/styles/base';
+@import '../../../../shared/styles/styles';
+
+.questions {
+  font-size: 10px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.point {
+  color: $accent-color;
+}

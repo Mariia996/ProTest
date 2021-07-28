@@ -1,0 +1,108 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+.cover {
+  background-image: url('../../images/useful-info-page/pic-mobile.jpeg');
+  background-size: cover;
+}
+
+.wrapper_for_lists {
+  padding-top: 40px;
+  padding-bottom: 111px;
+}
+
+.title_literature {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+  color: $primary-text-color;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 1px;
+    margin-top: 30px;
+    background-color: $line-color;
+  }
+}
+
+.literature {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.title_resources {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+  color: $primary-text-color;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 1px;
+    margin-top: 30px;
+    background-color: $line-color;
+  }
+}
+.resourses {
+  margin-top: 10px;
+}
+
+@include tablet {
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .cover {
+      background-image: url('../../images/useful-info-page/pic-tablet.jpeg');
+    }
+  }
+
+  .wrapper_for_lists {
+    padding-top: 119px;
+    padding-bottom: 416px;
+    padding-left: 50px;
+  }
+
+  .title_literature {
+    font-size: 22px;
+    line-height: 1.36;
+
+    &::after {
+      width: 320px;
+      margin-top: 22px;
+    }
+  }
+
+  .literature {
+    margin-top: 25px;
+    margin-bottom: 50px;
+  }
+
+  .title_resources {
+    font-size: 22px;
+    line-height: 1.36;
+
+    &::after {
+      width: 320px;
+      margin-top: 22px;
+    }
+  }
+  .resourses {
+    margin-top: 25px;
+  }
+}
+
+@include desktop {
+  .cover {
+    background-image: url('../../images/useful-info-page/pic-desktop.jpeg');
+  }
+
+  .wrapper_for_lists {
+    padding-top: 98px;
+    padding-bottom: 262px;
+    padding-left: 80px;
+  }
+}

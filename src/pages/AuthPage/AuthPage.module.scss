@@ -9,13 +9,13 @@
             margin-top: 80px;
             margin-bottom: 70px;
         }
-        @include desktop{
-            margin-top: 99px;
-            margin-bottom: 99px;
-        }
     }
     &TextWrapper{
+        @include tablet{
+            width: 540px;
+        }
         @include desktop{
+            width: 420px;
             margin-right: 105px;
         }
     }
@@ -59,9 +59,9 @@
 
 .wrapper{
     @include desktop {
-        @include flex(center, center);
-        margin-right: 125px;
-        margin-left: 125px;
+        @include flex(center,center);
+        margin-right: 105px;
+        margin-left: 105px;
         
     }
 }

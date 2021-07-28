@@ -1,5 +1,5 @@
 import React from "react";
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell} from "recharts";
 
 const data = [
   { name: "Group A", value:  12},
@@ -37,8 +37,8 @@ const renderCustomizedLabel = ({
 
 const Diagram = () => {
   return (
-       <PieChart width={180} height={180} >
-      <Pie
+      <PieChart width={180} height={180} >
+        <Pie
         data={data}
         // cx={160}
         // cy={160}
@@ -51,8 +51,8 @@ const Diagram = () => {
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
-      </Pie>
-    </PieChart>  
+       </Pie>
+      </PieChart>  
   )
     
 }

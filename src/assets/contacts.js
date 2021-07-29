@@ -40,7 +40,7 @@ export const contacts = [
   {
     id: '5',
     name: 'Olexiy Repin',
-    position: 'Mentor',
+    position: 'Teacher',
     imageUrl: team5,
   },
   {
@@ -58,7 +58,7 @@ export const contacts = [
   {
     id: '8',
     name: 'Bogdan Lyamzin',
-    position: 'Mentor',
+    position: 'Teacher',
     imageUrl: team8,
   },
   {

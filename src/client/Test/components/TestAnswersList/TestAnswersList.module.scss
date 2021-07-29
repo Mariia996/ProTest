@@ -1,0 +1,64 @@
+@import '../../../../shared/styles/base';
+@import '../../../../shared/styles/styles';
+
+.form {
+  &_field {
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+    &:last-child {
+      margin-top: 28px;
+    }
+  }
+
+  &_label {
+    @include flex(_, baseline);
+    font-size: 10px;
+    line-height: 1.2;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      border: 1px solid $primary-text-color;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-right: 20px;
+      flex-shrink: 0;
+
+      input[type='radio']:checked + & {
+        background-image: url('../../../../images/test-page/ellipse.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 10px 10px;
+      }
+    }
+  }
+}
+.text {
+  align-self: center;
+}
+
+@include tablet {
+  .form {
+    &_label {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    &_field {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+    &_field:last-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@include desktop {
+  .form_field:last-child {
+    margin-top: 35px;
+  }
+}

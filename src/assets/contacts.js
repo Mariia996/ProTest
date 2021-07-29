@@ -1,7 +1,7 @@
 import team1 from "../images/contacts/Maria.jpg"
 import team2 from "../images/contacts/Marina.jpg"
 import team3 from "../images/contacts/Sasha.jpg"
-import team4 from "../images/contacts/Marina.jpg"
+import team4 from "../images/contacts/Yarik.jpeg"
 
 
 export const contacts = [

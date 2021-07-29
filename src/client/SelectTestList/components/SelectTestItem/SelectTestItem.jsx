@@ -6,9 +6,12 @@ import { ReactComponent as ArrowIcon } from '../../../../images/main-page/arrow.
 const SelectTestItem = ({to, text}) => {
     return (
         <li className={styles.test_item}>
-            <NavLink to={to} className={styles.test_link}>{text}
+            <div className={styles.wrapper}>
+            <NavLink to={to} className={styles.test_link}>
+                <span className={styles.test_text}>{text}</span>  
                 <span className={styles.arrow}> <ArrowIcon /> </span>
-            </NavLink>
+             </NavLink>
+             </div>
         </li>
     )
 }

@@ -1,0 +1,66 @@
+@import '../../shared/styles/base';
+@import '../../shared/styles/styles';
+
+.wrapper {
+  padding-top: 24px;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 14px;
+  line-height: 1.214;
+  font-weight: 500;
+  &Text {
+    display: block;
+  }
+  &Container {
+    @include flex(space-between, center);
+    margin-bottom: 20px;
+  }
+}
+
+.finishBtn {
+  width: 130px;
+  height: 48px;
+  background-color: $button-color;
+  border: none;
+  color: $white-color;
+  text-transform: initial;
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: inherit;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+
+@include tablet {
+  .finishBtn {
+    width: 190px;
+    font-size: 14px;
+    line-height: 1.214;
+  }
+  .title {
+    font-size: 22px;
+    line-height: 1.227;
+  }
+  .titleContainer {
+    margin-bottom: 28px;
+  }
+  .wrapper {
+    padding-top: 42px;
+    padding-bottom: 270px;
+  }
+}
+
+@include desktop {
+  .wrapper {
+    margin: 0 auto;
+    width: 820px;
+    padding-bottom: 98px;
+  }
+}

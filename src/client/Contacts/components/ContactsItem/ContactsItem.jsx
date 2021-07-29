@@ -7,7 +7,7 @@ function ContactsItem({ name, position,imageUrl, email }) {
     return (
         <li className={styles.contactCardItem}>
             <div>
-              <img src={imageUrl} alt="" />  
+              <img src={imageUrl} alt="" className={styles.contactImg}/>  
             </div>
             <div className={styles.contactCardFooter}>
                 <h2 className={styles.contactName}>{name}</h2>

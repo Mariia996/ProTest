@@ -1,0 +1,60 @@
+@import '../../../../shared/styles/base';
+@import '../../../../shared/styles/styles';
+
+.currentQuestions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.test {
+  &_wrapper {
+    width: 100%;
+    background-color: $white-color;
+    padding: 40px 20px 65px 20px;
+    box-shadow: 0px 4px 15px rgba(2, 23, 42, 0.1);
+  }
+
+  &_question {
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+    margin-bottom: 28px;
+    &::after {
+      content: '';
+      display: block;
+      background-color: $line-color;
+      width: 130px;
+      height: 1px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  }
+}
+
+@include tablet {
+  .test {
+    &_wrapper {
+      padding: 50px 36px 58px 56px;
+    }
+    &_question {
+      text-align: center;
+      font-size: 22px;
+      line-height: 1.364;
+      font-weight: 700;
+      margin-bottom: 30px;
+      &::after {
+        width: 322px;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .test {
+    &_wrapper {
+      padding: 50px 87px 58px 85px;
+    }
+  }
+}

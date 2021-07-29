@@ -1,7 +1,10 @@
-import styles from './Footer.module.scss';
+import { Link } from 'react-router-dom';
+import { routes } from '../../app/components/App/routes';
 
 import { ReactComponent as HeartSvg } from '../../images/footer/heart.svg';
 import { ReactComponent as Copyright } from '../../images/footer/copyright.svg';
+
+import styles from './Footer.module.scss';
 
 const Footer = () => {
   return (
@@ -16,9 +19,9 @@ const Footer = () => {
         </div>
         <div className={styles.secondContainer}>
           <span className={styles.by}>by</span>
-          <a href="#" className={styles.footerLink}>
+          <Link to={routes.contacts} className={styles.footerLink}>
             GoIT Students
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

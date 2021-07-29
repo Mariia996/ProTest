@@ -4,37 +4,17 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from '../../../client/Navbar/components';
 import LoaderSpinner from '../../../shared/components/Loader';
 import Footer from '../../../client/Footer';
-import Logo from '../../../shared/components/Logo/';
 
 import { routes } from './routes';
 
 import PublicPage from '../PublicRoute';
 // import PrivatePage from '../PrivateRoute';
-const AuthPage = lazy(
-  () => import('../../../pages/AuthPage') /* webpackChunkName: "AuthPage" */,
-);
-const ContactsPage = lazy(
-  () =>
-    import(
-      '../../../pages/ContactsPage'
-    ) /* webpackChunkName: "ContactsPage" */,
-);
-const MainPage = lazy(
-  () => import('../../../pages/MainPage') /* webpackChunkName: "MainPage" */,
-);
-const TestPage = lazy(
-  () => import('../../../pages/TestPage') /* webpackChunkName: "TestPage" */,
-);
-const ResultsPage = lazy(
-  () =>
-    import('../../../pages/ResultsPage') /* webpackChunkName: "ResultsPage" */,
-);
-const UsefulInfoPage = lazy(
-  () =>
-    import(
-      '../../../pages/UsefulInfoPage'
-    ) /* webpackChunkName: "UsefulInfoPage" */,
-);
+const AuthPage = lazy(() => import('../../../pages/AuthPage') /* webpackChunkName: "AuthPage" */);
+const ContactsPage = lazy(() => import('../../../pages/ContactsPage') /* webpackChunkName: "ContactsPage" */);
+const MainPage = lazy(() => import('../../../pages/MainPage') /* webpackChunkName: "MainPage" */);
+const TestPage = lazy(() => import('../../../pages/TestPage') /* webpackChunkName: "TestPage" */);
+const ResultsPage = lazy(() =>import('../../../pages/ResultsPage') /* webpackChunkName: "ResultsPage" */);
+const UsefulInfoPage = lazy(() =>import('../../../pages/UsefulInfoPage') /* webpackChunkName: "UsefulInfoPage" */);
 
 function App() {
   const { auth, contacts, main, test, results, materials } = routes;

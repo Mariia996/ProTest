@@ -7,6 +7,7 @@ import team6 from '../images/contacts/Julia.JPG';
 import team7 from '../images/contacts/Nastya.JPG';
 import team8 from '../images/contacts/Bogdan.JPG';
 import team9 from '../images/contacts/Andrei.JPG';
+import team10 from '../images/contacts/Nadya.JPG';
 
 export const contacts = [
   {
@@ -66,5 +67,11 @@ export const contacts = [
     name: 'Andriy Kyrylenko',
     position: 'Mentor',
     imageUrl: team9,
+  },
+  {
+    id: '10',
+    name: 'Nadya Hristuk',
+    position: 'Mentor',
+    imageUrl: team10,
   },
 ];

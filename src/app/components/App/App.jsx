@@ -60,7 +60,6 @@ function App() {
           {/* <PrivatePage exact path={materials} component={UsefulInfoPage} redirectTo={auth} /> */}
           <Route exact path={materials} component={UsefulInfoPage} />
         </Switch>
-        <Logo />
         <Footer />
       </Suspense>
     </Router>

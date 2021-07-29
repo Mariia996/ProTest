@@ -52,6 +52,8 @@
     margin-bottom: 28px;
   }
   .wrapper {
+    margin: 0 auto;
+    width: 652px;
     padding-top: 42px;
     padding-bottom: 270px;
   }
@@ -59,7 +61,6 @@
 
 @include desktop {
   .wrapper {
-    margin: 0 auto;
     width: 820px;
     padding-bottom: 98px;
   }

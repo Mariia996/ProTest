@@ -1,8 +1,6 @@
 @import '../../shared/styles/base';
 @import '../../shared/styles/styles';
 
-@import 'src/shared/styles/_base';
-@import 'src/shared/styles/_styles';
 .footerBox {
   background-color: #02172a;
 }
@@ -21,7 +19,7 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-.copyright {
+.copyrightIcon {
   margin-right: 6.5px;
 }
 
@@ -59,7 +57,7 @@
   list-style: outside;
 }
 
-@media screen and (min-width: 767px) {
+@include tablet {
   .footerContainer {
     display: flex;
     justify-content: center;

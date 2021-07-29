@@ -1,67 +1,72 @@
-@import "src/shared/styles/base";
-@import "src/shared/styles/common";
+@import 'src/shared/styles/base';
+@import 'src/shared/styles/common';
 
-.authPage{
-    &Container{
-        margin-top: 39px;
-        margin-bottom: 50px;
-        @include tablet{
-            margin-top: 80px;
-            margin-bottom: 70px;
-        }
+.authPage {
+  &Container {
+    margin-top: 39px;
+    margin-bottom: 50px;
+    @include tablet {
+      margin-top: 80px;
+      margin-bottom: 70px;
     }
-    &TextWrapper{
-        @include tablet{
-            width: 540px;
-        }
-        @include desktop{
-            width: 420px;
-            margin-right: 105px;
-        }
+  }
+  &TextWrapper {
+    @include tablet {
+      width: 540px;
     }
-    &Title{
-        font-weight: 800;
-        font-size: 20px;
-        line-height: 1.2;
-        letter-spacing: 0.02em;
-        margin-bottom: 10px;
-        @include tablet {
-            font-size: 30px;
-            line-height: 1.23;
-            margin-bottom: 20px;
-        }
-        @include desktop{
-            font-size: 34px;
-            line-height: 1.2;
-            margin-bottom: 19px;
-        }
+    @include desktop {
+      width: 420px;
+      margin-right: 105px;
     }
-    &Text{
-        font-size: 12px;
-        line-height: 1.66;
-        letter-spacing: 0.02em;
-        color: #555555;
-        margin-bottom: 30px;
-        @include tablet {
-            font-size: 16px;
-            line-height: 2.25;
-        }
-        @include desktop{
-            font-size: 18px;
-            line-height: 2;
-        }
+  }
+  &Title {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+    @include tablet {
+      font-size: 30px;
+      line-height: 1.23;
+      margin-bottom: 20px;
     }
-    &Span{
-        font-weight: 700;
-        color: #000000;
+    @include desktop {
+      font-size: 34px;
+      line-height: 1.2;
+      margin-bottom: 19px;
     }
+  }
+  &Text {
+    font-size: 12px;
+    line-height: 1.66;
+    letter-spacing: 0.02em;
+    color: #555555;
+    margin-bottom: 30px;
+    @include tablet {
+      font-size: 16px;
+      line-height: 2.25;
+    }
+    @include desktop {
+      font-size: 18px;
+      line-height: 2;
+    }
+  }
+  &Span {
+    font-weight: 700;
+    color: #000000;
+  }
 }
 
-.wrapper{
-    @include desktop {
-        @include flex(center,center);
-        margin-right: 105px;
-        margin-left: 105px;
-        
-    }
+.wrapper {
+  @include tablet {
+    width: 539px;
+  }
+  @include tablet-end {
+    margin: 0 auto;
+  }
+
+  @include desktop {
+    @include flex(center, center);
+    width: 100%;
+  }
 }

@@ -1,10 +1,9 @@
-@import "src/shared/styles/base";
-@import "src/shared/styles/common";
+@import 'src/shared/styles/base';
+@import 'src/shared/styles/common';
 
 .contacts {
   margin-top: 40px;
   margin-bottom: 56px;
-  padding: 0 20px;
   @include tablet {
     margin-top: 41px;
     margin-bottom: 76px;
@@ -19,18 +18,18 @@
     line-height: 1.66;
     text-align: center;
     &::after {
-      content: "";
+      content: '';
       display: block;
       margin: 0 auto;
       width: 130px;
       margin-top: 10px;
       margin-bottom: 20px;
       border: 1px solid rgba(0, 18, 47, 0.15);
-      @include tablet{
+      @include tablet {
         width: 322px;
         margin-top: 22px;
         margin-bottom: 39px;
-    }
+      }
     }
     @include tablet {
       font-size: 22px;

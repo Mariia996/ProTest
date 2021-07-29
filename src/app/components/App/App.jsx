@@ -23,12 +23,7 @@ function App() {
       <Suspense fallback={<LoaderSpinner />}>
         <Navbar />
         <Switch>
-          <PublicPage
-            exact
-            path={auth}
-            restricted
-            component={AuthPage}
-            redirectTo={main}
+          <PublicPage exact path={auth} restricted component={AuthPage} redirectTo={main}
           />
           <Route exact path={contacts} component={ContactsPage} />
           {/* <PrivatePage exact path={main} component={MainPage} redirectTo={auth} /> */}

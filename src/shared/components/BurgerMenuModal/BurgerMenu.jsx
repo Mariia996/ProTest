@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 import styles from './BurgerMenu.module.scss';
 
-const BurgerMenu = ({onClose, children}) => {
+const BurgerMenu = ({ onClose, children}) => {
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
         return () => {

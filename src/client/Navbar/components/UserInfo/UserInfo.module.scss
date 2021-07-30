@@ -1,14 +1,5 @@
 @import 'src/shared/styles/base';
 
-.btnLogOut {
-  display: none;
-  @include tablet {
-    display: block;
-    border: none;
-    fill: $primary-text-color;
-  }
-}
-
 .email {
   display: none;
   @include tablet {
@@ -42,7 +33,11 @@
   border-radius: 50%;
   color: $secondary-text-color;
   box-shadow: 0px 1px 1px rgba(18, 29, 46, 0.1);
-  margin-right: 10px;
+
+  @include tablet {
+    margin-right: 10px;
+  }
+
   @include desktop {
     font-size: 14px;
     line-height: 1.14px;

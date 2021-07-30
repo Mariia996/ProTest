@@ -20,7 +20,6 @@ import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
 function Header() {
     const [openBurger, setOpenBurger] = useState(false)
     const isAuthorized = useSelector(getIsAuthenticated, shallowEqual)
-
     const toggleBurger = () => {
         setOpenBurger(!openBurger);
     }

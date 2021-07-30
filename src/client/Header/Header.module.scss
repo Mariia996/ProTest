@@ -1,0 +1,72 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+.container {
+  @include flex;
+  justify-content: space-between;
+}
+.header {
+  position: relative;
+  border-bottom: 1px solid $line-color;
+}
+.logo_container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.user {
+  width: 30px;
+  height: 30px;
+  padding: 20px;
+}
+.right_side_wrapper {
+  @include flex(center, center);
+  justify-content: space-between;
+  border-left: 1px solid $line-color;
+  padding-left: 20px;
+}
+.burger_button {
+  border: none;
+}
+
+.close_icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 27px 20px;
+  border-left: 1px solid #e2e3e5;
+}
+
+.wrapper_nav_list {
+  text-align: center;
+  margin-top: 26px;
+}
+.logout_icon {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  background-color: transparent;
+}
+.nav_contacts_wrapper {
+  display: none;
+}
+
+@include tablet {
+  .right_side_wrapper {
+    display: none;
+  }
+  .user {
+    display: none;
+  }
+  .nav_contacts_wrapper {
+    @include flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .link_nav {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    color: $primary-text-color;
+  }
+}

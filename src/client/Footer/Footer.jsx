@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styles from './Footer.module.scss';
 
 import { ReactComponent as HeartSvg } from '../../images/footer/heart.svg';
@@ -12,13 +13,13 @@ const Footer = () => {
           <span className={styles.year}>2021</span>
           <span className={styles.reservedText}>All Rights Reserved</span>
           <span className={styles.developerText}>Developed with</span>
-          <HeartSvg className={styles.heartSvg} />
         </div>
         <div className={styles.secondContainer}>
+          <span className={styles.heart_container}> <HeartSvg className={styles.heartSvg} /></span> 
           <span className={styles.by}>by</span>
-          <a href="#" className={styles.footerLink}>
+          <NavLink to='/contacts' className={styles.footerLink}>
             GoIT Students
-          </a>
+          </NavLink>
         </div>
       </div>
     </footer>

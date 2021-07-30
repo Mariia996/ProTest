@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import Header from '../../../client/Header';
 import Navbar from '../../../client/Navbar/components';
 import LoaderSpinner from '../../../shared/components/Loader';
 import Footer from '../../../client/Footer';
@@ -21,7 +22,8 @@ function App() {
   return (
     <Router>
       <Suspense fallback={<LoaderSpinner />}>
-        <Navbar />
+        <Header/>
+        {/* <Navbar /> */}
         <Switch>
           <PublicPage exact path={auth} restricted component={AuthPage} redirectTo={main}
           />

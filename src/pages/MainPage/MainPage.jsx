@@ -2,8 +2,9 @@ import React from 'react';
 import SelectTestList from '../../client/SelectTestList/components/SelectTestList';
 import styles from './MainPage.module.scss';
 const MainPage = () => {
-
     return (
+
+            
         <div className={styles.container}>
             <div className={styles.wrapper}>
                 <p className={styles.text_choice_test}>
@@ -17,7 +18,7 @@ const MainPage = () => {
                     <SelectTestList/>
                 </div>
             </div> 
-        </div>
+            </div>
     )
 }
 export default MainPage;

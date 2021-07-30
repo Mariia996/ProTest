@@ -1,0 +1,15 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+@include tablet {
+  .navbar_container {
+    margin-top: 25px;
+    width: 319px;
+  }
+}
+
+@include desktop {
+  .navbar_container {
+    width: 386px;
+  }
+}

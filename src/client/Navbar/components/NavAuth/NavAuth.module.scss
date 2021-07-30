@@ -1,0 +1,32 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+.link_nav {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  color: $primary-text-color;
+}
+
+.horizontal_line {
+  &::after {
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 1px;
+    margin-top: 26px;
+    background-color: $line-color;
+  }
+}
+
+.activeNavLink {
+  &::after {
+    content: ' ';
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 2px;
+    margin-top: 4px;
+    background-color: #ff6b09;
+  }
+}

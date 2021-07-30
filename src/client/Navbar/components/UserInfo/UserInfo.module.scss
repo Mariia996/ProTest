@@ -1,0 +1,50 @@
+@import 'src/shared/styles/base';
+
+.btnLogOut {
+  display: none;
+  @include tablet {
+    display: block;
+    border: none;
+    fill: $primary-text-color;
+  }
+}
+
+.email {
+  display: none;
+  @include tablet {
+    display: block;
+    margin-right: 20px;
+    color: $primary-text-color;
+    font-size: 12px;
+    line-height: 1.16;
+  }
+  @include desktop {
+    font-size: 14px;
+    line-height: 1.14;
+  }
+}
+
+.containerUser {
+  @include flex(center, center);
+}
+
+.firstLetter {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  background: $white-color;
+  border-radius: 50%;
+  color: $secondary-text-color;
+  box-shadow: 0px 1px 1px rgba(18, 29, 46, 0.1);
+  margin-right: 10px;
+  @include desktop {
+    font-size: 14px;
+    line-height: 1.14px;
+  }
+}

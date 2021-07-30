@@ -1,8 +1,11 @@
-import { NavLink } from "react-router-dom";
-import styles from './Footer.module.scss';
+import { Link } from 'react-router-dom';
+import { routes } from '../../app/components/App/routes';
+
 
 import { ReactComponent as HeartSvg } from '../../images/footer/heart.svg';
 import { ReactComponent as Copyright } from '../../images/footer/copyright.svg';
+
+import styles from './Footer.module.scss';
 
 const Footer = () => {
   return (
@@ -17,9 +20,10 @@ const Footer = () => {
         <div className={styles.secondContainer}>
           <span className={styles.heart_container}> <HeartSvg className={styles.heartSvg} /></span> 
           <span className={styles.by}>by</span>
-          <NavLink to='/contacts' className={styles.footerLink}>
+
+          <Link to={routes.contacts} className={styles.footerLink}>
             GoIT Students
-          </NavLink>
+          </Link>
         </div>
       </div>
     </footer>

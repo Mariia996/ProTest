@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { shallowEqual, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 import Navbar from '../Navbar/components/Navbar';
 import BurgerMenu from '../../shared/components/BurgerMenuModal';
 import NavMenuList from '../Navbar/components/NavMenuList';
-// import NavAuth from '../Navbar/components/NavAuth';
+import NavAuth from '../Navbar/components/NavAuth';
+import UserInfo from '../Navbar/components/UserInfo';
 import Logo from '../../shared/components/Logo';
 
 import styles from './Header.module.scss';
@@ -13,9 +15,11 @@ import { ReactComponent as Burger } from '../../images/burger-menu/burger.svg';
 import { ReactComponent as CloseIcon } from '../../images/burger-menu/close.svg';
 import { ReactComponent as LogOut } from '../../images/burger-menu/logout.svg';
 
+import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
+
 function Header() {
     const [openBurger, setOpenBurger] = useState(false)
-
+    const isAuthorized = useSelector(getIsAuthenticated, shallowEqual)
     const toggleBurger = () => {
         setOpenBurger(!openBurger);
     }
@@ -28,11 +32,15 @@ function Header() {
                     <Logo/>
                 </div>
 
-                {/* <Navbar /> */}
+                {isAuthorized &&
+                    <div className={styles.navbar_wrapper}>
+                     <Navbar />
+               </div>} 
                 
-                <div className={styles.user}>
-
-                </div>
+                {isAuthorized &&
+                    <div className={styles.user}>
+                    <UserInfo/>
+                </div>} 
                 
                 <div className={styles.right_side_wrapper}>
                   {openBurger ? <CloseIcon onClick={toggleBurger} /> : <button type='button' className={styles.burger_button} onClick={toggleBurger} ><Burger/></button>} 
@@ -42,12 +50,12 @@ function Header() {
                          Contacts
                      </NavLink>
                 </div> 
+                
                 {openBurger && <BurgerMenu>
                     <div className={styles.wrapper_nav_list}>
-                        <NavMenuList />
-                        {/* <NavAuth/> */}
+                       {isAuthorized ? <NavMenuList /> : <NavAuth/>} 
                     </div>  
-                   <button type='button' className={styles.logout_icon}><LogOut/></button> 
+                  {isAuthorized && <button type='button' className={styles.logout_icon}><LogOut/></button> } 
                 </BurgerMenu>} 
             </div>
         

@@ -23,6 +23,14 @@ class AuthService extends BaseHttpService {
       this.removeToken();
     } catch (error) {}
   }
+
+  async getCurrentUser() {
+    try {
+      this.loadToken();
+      const data = await this.get('users/current');
+      return data;
+    } catch (error) {}
+  }
 }
 
 export default AuthService;

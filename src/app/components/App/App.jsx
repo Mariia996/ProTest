@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from '../../../client/Header';
@@ -6,6 +7,7 @@ import Navbar from '../../../client/Navbar/components';
 import LoaderSpinner from '../../../shared/components/Loader';
 import Footer from '../../../client/Footer';
 
+import { getCurrentUser } from '../../../redux/auth/auth-operations';
 import { routes } from './routes';
 
 import PublicPage from '../PublicRoute';
@@ -18,6 +20,12 @@ const ResultsPage = lazy(() =>import('../../../pages/ResultsPage') /* webpackChu
 const UsefulInfoPage = lazy(() =>import('../../../pages/UsefulInfoPage') /* webpackChunkName: "UsefulInfoPage" */);
 
 function App() {
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
+
   const { auth, contacts, main, test, results, materials } = routes;
   return (
     <Router>

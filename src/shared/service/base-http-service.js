@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 class BaseHttpService {
-  BASE_URL = 'https://localhost:3000';
+  BASE_URL = 'https://localhost:4000';
 
   accessToken = null;
 

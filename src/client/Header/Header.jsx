@@ -12,8 +12,7 @@ import Logo from '../../shared/components/Logo';
 
 import styles from './Header.module.scss';
 
-import { ReactComponent as Burger } from '../../images/burger-menu/burger.svg';
-import { ReactComponent as CloseIcon } from '../../images/burger-menu/close.svg';
+import Hamburger from 'hamburger-react';
 import { ReactComponent as LogOut } from '../../images/burger-menu/logout.svg';
 
 import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
@@ -23,13 +22,8 @@ function Header() {
     const onLogout = () => dispatch(logOut())
 
     const [openBurger, setOpenBurger] = useState(false)
-    // const isAuthorized = useSelector(getIsAuthenticated, shallowEqual)
-    const isAuthorized = true;
-    const toggleBurger = () => {
-        setOpenBurger(!openBurger);
-    }
+    const isAuthorized = useSelector(state => getIsAuthenticated(state), shallowEqual);
     
-
     return (
       <header className={styles.header}>
             <div className={styles.container}>
@@ -53,7 +47,7 @@ function Header() {
                 } 
                 
                 <div className={styles.right_side_wrapper}>
-                  {openBurger ? <CloseIcon onClick={toggleBurger} /> : <button type='button' className={styles.burger_button} onClick={toggleBurger} ><Burger/></button>} 
+                    <Hamburger toggled={openBurger} toggle={setOpenBurger} size={20}/>
                 </div>
        
                     {openBurger && <BurgerMenu>

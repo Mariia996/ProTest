@@ -1,0 +1,8 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+@include tablet {
+  .navbar_container {
+    @include flex(center, center);
+  }
+}

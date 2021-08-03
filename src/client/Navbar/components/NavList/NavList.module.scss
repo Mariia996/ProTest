@@ -1,0 +1,8 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+@include tablet {
+  .list_nav {
+    @include flex(space-between, center);
+  }
+}

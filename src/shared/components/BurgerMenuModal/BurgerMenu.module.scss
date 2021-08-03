@@ -1,0 +1,31 @@
+@import 'src/shared/styles/_base';
+@import 'src/shared/styles/_styles';
+
+.open_menu {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $primary-bg-color;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close_menu {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modalContent {
+  width: 100%;
+}
+@include tablet {
+  .open_menu {
+    display: none;
+  }
+  .close_menu {
+    display: none;
+  }
+}

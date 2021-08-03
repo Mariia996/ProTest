@@ -54,10 +54,68 @@
 
 .footerLink {
   color: rgba(255, 255, 255, 0.4);
+
   list-style: outside;
+
+  &::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 115px;
+    height: 1px;
+    margin-top: 4px;
+    background-color: #ff6b09;
+  }
+}
+
+.heart_container {
+  position: relative;
+  margin-right: 20px;
+}
+
+.heartSvg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: opacity 7s ease-in-out;
+  animation-name: heartFadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-direction: alternate;
+}
+
+@keyframes heartFadeInOut {
+  0% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 0;
+  }
+  42% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
 }
 
 @include tablet {
+  .footerLink {
+    &::after {
+      content: '';
+      display: block;
+      margin: 0;
+      width: 100%;
+      height: 1px;
+      margin-top: 4px;
+      background-color: #ff6b09;
+    }
+  }
   .footerContainer {
     display: flex;
     justify-content: center;
@@ -87,8 +145,10 @@
     font-size: 12px;
     line-height: 1.25;
   }
-
+  .heart_container {
+    margin-right: 0;
+  }
   .by {
-    margin-left: 7px;
+    margin-left: 20px;
   }
 }

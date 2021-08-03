@@ -1,11 +1,13 @@
 const selectTests = [
     {
         to:'/test',
-        text: 'QA technical training'
+        text: 'QA technical training',
+        typeTest: 'practice'
     },
     {
         to:'/test',
-        text: 'Testing theory'
+        text: 'Testing theory',
+        typeTest: 'theory'
     }
 ]
 

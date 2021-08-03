@@ -1,6 +1,6 @@
 import TestsService from './tests-service'
 
-import { fetchTestsRequest, fetchTestsSuccess, fetchTestsError } from "./tests-actions"
+import { fetchTestsRequest, fetchTestsSuccess, fetchTestsError } from "./tests-action"
 
 const testsService = new TestsService();
 

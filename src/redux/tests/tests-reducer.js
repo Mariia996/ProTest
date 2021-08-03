@@ -5,7 +5,7 @@ import {fetchTestsRequest, fetchTestsSuccess, fetchTestsError} from "./tests-act
 
 const tests = createReducer([], {
   [fetchTestsRequest]: (state) => ([...state]),
-  [fetchTestsSuccess]: (_, { payload }) => payload,
+  [fetchTestsSuccess]: (_, { payload }) => ([...payload.tests]),
 });
 
 const loading = createReducer(false, {

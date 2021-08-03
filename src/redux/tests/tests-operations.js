@@ -1,14 +1,16 @@
-import axios from "axios"
+import TestsService from './tests-service'
 
-import actions from "./tests-actions"
+import { fetchTestsRequest, fetchTestsSuccess, fetchTestsError } from "./tests-actions"
 
-export const fetchTests = () => async (dispatch) => {
-  dispatch(actions.fetchTestsRequest())
+const testsService = new TestsService();
+
+export const fetchTests = (body) => async (dispatch) => {
+  dispatch(fetchTestsRequest())
   try {
-      const { data } = await axios.get("http://localhost:4000/api/v1/tests/theory")
+      const data = await testsService.getTests(body)
       console.log(data);
-    dispatch(actions.fetchTestsSuccess(data))
+    dispatch(fetchTestsSuccess(data))
   } catch (error) {
-    dispatch(actions.fetchTestsError(error))
+    dispatch(fetchTestsError(error))
   }
 }

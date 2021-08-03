@@ -3,7 +3,6 @@
 
 @include tablet {
   .list_nav {
-    @include flex(space-between, baseline);
-    flex-wrap: nowrap;
+    @include flex(space-between, center);
   }
 }

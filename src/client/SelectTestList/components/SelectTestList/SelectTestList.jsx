@@ -7,7 +7,7 @@ import styles from './SelectTestList.module.scss';
 
 const SelectTest = () => {
     const tests = selectTests.map(item => <SelectTestItem key={v4()} {...item} />)
-    
+
     return (
         <ul className={styles.test_list}>
             {tests}

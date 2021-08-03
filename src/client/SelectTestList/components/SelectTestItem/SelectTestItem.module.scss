@@ -19,10 +19,13 @@
     margin-bottom: 20px;
   }
 }
+.wrapper {
+  @include flex(center);
+  flex-direction: column;
+}
 
 .test_link {
-  display: block;
-  width: 250px;
+  width: 100%;
   height: 100%;
   cursor: pointer;
   font-weight: 800;
@@ -31,6 +34,7 @@
   color: $white-color;
   text-align: center;
   text-decoration: none;
+  @include flex(center, center);
 }
 
 .arrow {
@@ -54,4 +58,8 @@
       margin-bottom: 0;
     }
   }
+}
+
+.test_text {
+  width: 250px;
 }

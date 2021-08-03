@@ -8,7 +8,6 @@ export const getResults = body => async dispatch => {
   dispatch(resultRequest());
   try {
     const data = await resultsService.result(body);
-    console.log(data);
     dispatch(resultSuccess(data));
   } catch (error) {
     dispatch(resultError(error));

@@ -31,7 +31,7 @@ const ResultsPage = () => {
             <p className={styles.resultPageText}>[ { resultType}]</p>
         <div className={styles.diagramWrapper}>
             <div className={styles.diagram}>
-                    <Diagram />
+                    <Diagram answer={rightAnswer}/>
             </div> 
             <div className={styles.percentageWrapper}>
                 <span className={styles.percentageCorrect}></span>

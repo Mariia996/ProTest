@@ -54,12 +54,12 @@ function Header() {
                     <div className={styles.wrapper_nav_list}>
                        {isAuthorized ? <NavMenuList/> : <NavAuth/>} 
                     </div>  
-                  {isAuthorized && <LogOut className={styles.logout_icon} onClick={onLogout}></LogOut> } 
+                  {isAuthorized && <LogOut className={styles.logout_icon} onClick={onLogout}/>} 
                 </BurgerMenu>} 
       
 
                 {isAuthorized && <div className={styles.logout_wrapper}>
-                <LogOut className={styles.btnLogOut} onClick={onLogout}></LogOut>
+                <LogOut className={styles.btnLogOut} onClick={onLogout}/>
                 </div>} 
             </div>
         

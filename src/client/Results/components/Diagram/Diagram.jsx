@@ -1,9 +1,12 @@
 import React from "react";
 import { PieChart, Pie, Cell} from "recharts";
 
-const data = [
+
+
+const Diagram = ({answer}) => {
+  const data = [
   { name: "Group A", value:  12},
-  { name: "Group B", value: 1},
+  { name: "Group B", value: answer},
 ];
 
 const COLORS = ["#FF6B01", "#D7D7D7"];
@@ -34,8 +37,6 @@ const renderCustomizedLabel = ({
     </text>
   );
 };
-
-const Diagram = () => {
   return (
       <PieChart width={180} height={180} >
         <Pie

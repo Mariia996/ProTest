@@ -73,7 +73,8 @@
     }
   }
   &Image {
-    margin-top: 17px;
+    width: 120px;
+    height: 120px;
     @include tablet {
       width: 176px;
       height: 176px;
@@ -132,6 +133,7 @@
   &Wrapper {
     @include flex(center, center);
     flex-direction: column;
+    margin-top: 17px;
   }
   &Point {
     font-weight: 700;

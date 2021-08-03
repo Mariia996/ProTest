@@ -2,27 +2,40 @@
 @import 'src/shared/styles/_styles';
 
 .container {
-  @include flex;
-  justify-content: space-between;
+  @include flex(_, center);
+  @include mobile-end {
+    padding-left: 20px;
+    padding-right: 0;
+  }
+  @include tablet {
+    @include flex(space-between);
+  }
+
+  @include desktop {
+    justify-content: start;
+  }
 }
+
+@include mobile-end {
+  .userInfo_container {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+}
+
 .header {
   position: relative;
   border-bottom: 1px solid $line-color;
 }
-.logo_container {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .navbar_wrapper {
   display: none;
 }
 
 .right_side_wrapper {
   @include flex(center, center);
-  justify-content: space-between;
+  width: 56px;
+  height: 70px;
   border-left: 1px solid $line-color;
-  padding-left: 20px;
 }
 .burger_button {
   border: none;
@@ -59,7 +72,7 @@
   }
 
   .navbar_wrapper {
-    display: block;
+    @include flex(center, center);
   }
   .nav_contacts_wrapper {
     @include flex;
@@ -85,6 +98,15 @@
   .logout_wrapper {
     @include flex(center, center);
     padding-left: 20px;
+    height: 70px;
     border-left: 1px solid $line-color;
+  }
+}
+
+@include desktop {
+  .navbar_wrapper {
+    @include flex(center, center);
+    margin-left: auto;
+    margin-right: 68px;
   }
 }

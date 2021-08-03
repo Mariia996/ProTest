@@ -23,16 +23,16 @@ function Header() {
 
     const [openBurger, setOpenBurger] = useState(false)
     const isAuthorized = useSelector(state => getIsAuthenticated(state), shallowEqual);
-    
+
     return (
       <header className={styles.header}>
             <div className={styles.container}>
-                 
+
                 <div className={styles.logo_container}>
                     <Logo/>
                 </div>
-           
-                {isAuthorized ? 
+
+                {isAuthorized ?
                     <div className={styles.navbar_wrapper}>
                      <Navbar />
                     </div> :
@@ -40,29 +40,30 @@ function Header() {
                      <NavLink to='/contacts' className={styles.link_nav} activeClassName={styles.activeNavLink}>
                          Contacts
                      </NavLink>
-                </div> } 
-
-                {isAuthorized &&
-                    <UserInfo/>
-                } 
-                
-                <div className={styles.right_side_wrapper}>
-                    <Hamburger toggled={openBurger} toggle={setOpenBurger} size={20}/>
+                </div> }
+                <div className={styles.userInfo_container}>
+                    {isAuthorized &&
+                        <UserInfo/>
+                    }
                 </div>
-       
+
+                <div className={styles.right_side_wrapper}>
+                    <Hamburger toggled={openBurger} toggle={setOpenBurger} size={20} />
+                </div>
+
                     {openBurger && <BurgerMenu>
                     <div className={styles.wrapper_nav_list}>
-                       {isAuthorized ? <NavMenuList/> : <NavAuth/>} 
-                    </div>  
-                  {isAuthorized && <LogOut className={styles.logout_icon} onClick={onLogout}></LogOut> } 
-                </BurgerMenu>} 
-      
+                       {isAuthorized ? <NavMenuList/> : <NavAuth/>}
+                    </div>
+                  {isAuthorized && <LogOut className={styles.logout_icon} onClick={onLogout}></LogOut> }
+                </BurgerMenu>}
+
 
                 {isAuthorized && <div className={styles.logout_wrapper}>
                 <LogOut className={styles.btnLogOut} onClick={onLogout}></LogOut>
-                </div>} 
+                </div>}
             </div>
-        
+
          </header>
     )
 };

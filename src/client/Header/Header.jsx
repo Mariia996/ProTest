@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { shallowEqual, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual} from 'react-redux';
+import { logOut } from '../../redux/auth/auth-operations';
 import { NavLink } from "react-router-dom";
 
 import Navbar from '../Navbar/components/Navbar';
@@ -11,19 +12,18 @@ import Logo from '../../shared/components/Logo';
 
 import styles from './Header.module.scss';
 
-import { ReactComponent as Burger } from '../../images/burger-menu/burger.svg';
-import { ReactComponent as CloseIcon } from '../../images/burger-menu/close.svg';
+import Hamburger from 'hamburger-react';
 import { ReactComponent as LogOut } from '../../images/burger-menu/logout.svg';
 
 import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
 
 function Header() {
-    const [openBurger, setOpenBurger] = useState(false)
-    const isAuthorized = useSelector(getIsAuthenticated, shallowEqual)
-    const toggleBurger = () => {
-        setOpenBurger(!openBurger);
-    }
+    const dispatch = useDispatch()
+    const onLogout = () => dispatch(logOut())
 
+    const [openBurger, setOpenBurger] = useState(false)
+    const isAuthorized = useSelector(state => getIsAuthenticated(state), shallowEqual);
+    
     return (
       <header className={styles.header}>
             <div className={styles.container}>
@@ -31,32 +31,37 @@ function Header() {
                 <div className={styles.logo_container}>
                     <Logo/>
                 </div>
-
-                {isAuthorized &&
+           
+                {isAuthorized ? 
                     <div className={styles.navbar_wrapper}>
                      <Navbar />
-               </div>} 
-                
-                {isAuthorized &&
-                    <div className={styles.user}>
-                    <UserInfo/>
-                </div>} 
-                
-                <div className={styles.right_side_wrapper}>
-                  {openBurger ? <CloseIcon onClick={toggleBurger} /> : <button type='button' className={styles.burger_button} onClick={toggleBurger} ><Burger/></button>} 
-                </div>
-                <div className={styles.nav_contacts_wrapper}>
+                    </div> :
+                    <div className={styles.nav_contacts_wrapper}>
                      <NavLink to='/contacts' className={styles.link_nav} activeClassName={styles.activeNavLink}>
                          Contacts
                      </NavLink>
-                </div> 
+                </div> } 
+
+                {isAuthorized &&
+                    <UserInfo/>
+                } 
                 
-                {openBurger && <BurgerMenu>
+                <div className={styles.right_side_wrapper}>
+                    <Hamburger toggled={openBurger} toggle={setOpenBurger} size={20}/>
+                </div>
+       
+                    {openBurger && <BurgerMenu>
                     <div className={styles.wrapper_nav_list}>
-                       {isAuthorized ? <NavMenuList /> : <NavAuth/>} 
+                       {isAuthorized ? <NavMenuList/> : <NavAuth/>} 
                     </div>  
                   {isAuthorized && <button type='button' className={styles.logout_icon}><LogOut/></button> } 
                 </BurgerMenu>} 
+      
+
+                {isAuthorized && <div className={styles.logout_wrapper}>
+                <LogOut className={styles.btnLogOut} onClick={onLogout}></LogOut>
+                </div>} 
+
             </div>
         
          </header>

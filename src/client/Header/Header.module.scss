@@ -13,9 +13,6 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.user {
-  padding: 20px;
-}
 
 .navbar_wrapper {
   display: none;
@@ -52,6 +49,9 @@
 .nav_contacts_wrapper {
   display: none;
 }
+.logout_wrapper {
+  display: none;
+}
 
 @include tablet {
   .right_side_wrapper {
@@ -72,5 +72,19 @@
     font-size: 14px;
     line-height: 1.14;
     color: $primary-text-color;
+  }
+
+  .btnLogOut {
+    display: none;
+    @include tablet {
+      display: block;
+      border: none;
+      fill: $primary-text-color;
+    }
+  }
+  .logout_wrapper {
+    @include flex(center, center);
+    padding-left: 20px;
+    border-left: 1px solid $line-color;
   }
 }

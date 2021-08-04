@@ -11,6 +11,7 @@ const initialStateError = null;
 
 const resultAnswers = createReducer(initialStateResult, {
   [actions.resultSuccess]: (_, { payload }) => payload.rightAnswers,
+  [actions.resetResults]: () => null,
 });
 
 const type = createReducer(initialStateType, {

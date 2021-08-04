@@ -6,16 +6,14 @@ import cat5 from '../../../images/cats/simon_cat_8.png';
 import cat6 from '../../../images/cats/simon_cat_7.png';
 import cat7 from '../../../images/cats/simon_cat_2.png';
 
-function countResults(rightAnswer) {
-  const defaultCorrectAnswer = 12;
-
+function countResults(rightAnswer, totalQuestions) {
   let mainMessage;
 
   let secondaryMessage;
 
   let image;
 
-  const result = (rightAnswer * 100) / defaultCorrectAnswer;
+  const result = (rightAnswer * 100) / totalQuestions;
 
   if (result <= 10) {
     mainMessage = 'Oh no!';

@@ -2,9 +2,9 @@ import React from "react";
 import { PieChart, Pie, Cell} from "recharts";
 
 
-const Diagram = ({ answer }) => {
+const Diagram = ({ answer, total }) => {
   const data = [
-  { name: "Group A", value:  12},
+  { name: "Group A", value:  total},
   { name: "Group B", value: answer},
 ];
 

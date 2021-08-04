@@ -1,9 +1,9 @@
 import BaseHttpService from '../../shared/service/base-http-service';
 
 class ResultsService extends BaseHttpService {
-  async result() {
+  async result(body) {
     try {
-      const { data } = await this.get('tests/result');
+      const { data } = await this.post('tests/result', body);
       return data;
     } catch (error) {}
   }

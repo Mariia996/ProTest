@@ -28,8 +28,8 @@ const ResultsPage = () => {
     
     const handleGoBack = () => {
         // history.push(location?.state?.from ?? '/')
-        // history.push('/test')
-        reset()
+        history.push('/test')
+        // reset()
         // history.goBack()
     }
 

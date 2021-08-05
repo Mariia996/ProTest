@@ -8,10 +8,6 @@ const initialState = {
 const useRadioForm = () => {
   const [formData, setFormData] = useState(initialState);
   const [array, setArray] = useState([]);
-  console.log(
-    '🚀 ~ file: useRadioForm.js ~ line 5 ~ useRadioForm ~ formData',
-    formData,
-  );
 
   const handleChange = ({ target }) => {
     const { name, value } = target;

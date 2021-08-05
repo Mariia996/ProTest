@@ -9,7 +9,7 @@ const TestAnswersList = ({ test, handleChange}) => {
               <input
                 id={inputId}
                 type="radio"
-                name="answer"
+                name="userAnswer"
                 value={answer}
                 className={s.visuallyHidden}
 

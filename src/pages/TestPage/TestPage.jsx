@@ -3,7 +3,8 @@ import {
   useSelector,
   shallowEqual,
 } from 'react-redux';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import {useParams} from 'react-router-dom';
 
 import { getTests } from '../../redux/tests/tests-selectors';
 import useRadioForm from '../../shared/hooks/useRadioForm';
@@ -16,11 +17,14 @@ import s from './TestPage.module.scss';
 
 const initialState = {
   _id: '',
-  answer: ''
+  userAnswer: ''
 }
 
 const TestPage = () => {
   const dispatch = useDispatch();
+  const {typeTest} = useParams()
+
+
 
   const tests = useSelector(state => getTests(state), shallowEqual);
   const { questionType } = tests[0]
@@ -33,6 +37,11 @@ const TestPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
   };
+
+  useEffect(() => {
+
+
+  }, [dispatch])
 
     return (
     <div className={s.container}>

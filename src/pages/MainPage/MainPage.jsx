@@ -3,13 +3,11 @@ import SelectTestList from '../../client/SelectTestList/components/SelectTestLis
 import styles from './MainPage.module.scss';
 const MainPage = () => {
     return (
-
-            
         <div className={styles.container}>
             <div className={styles.wrapper}>
                 <p className={styles.text_choice_test}>
                     “Regression testing. What is it?
-                    If the system compiles, that's good, 
+                    If the system compiles, that's good,
                     if it boots, that's great!”
                 </p>
                 <h3 className={styles.creator_name}>Linus Torvalds</h3>
@@ -17,7 +15,7 @@ const MainPage = () => {
                 <div className={styles.wrapper_for_tests}>
                     <SelectTestList/>
                 </div>
-            </div> 
+            </div>
             </div>
     )
 }

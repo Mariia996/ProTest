@@ -4,14 +4,14 @@ import { ReactComponent as ArrowLeft } from '../../../../images/test-page/vector
 
 import s from './Pagination.module.scss';
 
-const Pagination = () => {
+const Pagination = ({ handleLeftClick, handleRightClick, questionIdx }) => {
     return (
         <div className={s.pagination}>
-            <Button className={s.pagination_btn}>
+            <Button className={questionIdx === 0 ? s.pagination_btn_hidden : s.pagination_btn} onClick={handleLeftClick}>
                 <ArrowLeft className={`${s.pagination_icon} ${s.left_btn_icon}`} />
                 <span className={s.pagination_btn_text}>Previous question</span>
             </Button>
-            <Button className={s.pagination_btn}>
+            <Button className={questionIdx === 11 ? s.pagination_btn_hidden : s.pagination_btn} onClick={handleRightClick}>
                 <span className={s.pagination_btn_text}>Next question</span>
                 <ArrowRight className={s.pagination_icon} />
             </Button>

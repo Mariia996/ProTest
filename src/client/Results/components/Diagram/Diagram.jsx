@@ -1,50 +1,21 @@
 import React from "react";
 import { PieChart, Pie, Cell} from "recharts";
 
-const data = [
-  { name: "Group A", value:  12},
-  { name: "Group B", value: 1},
+
+const Diagram = ({ answer, total }) => {
+  const data = [
+  { name: "Group A", value:  total},
+  { name: "Group B", value: answer},
 ];
 
 const COLORS = ["#FF6B01", "#D7D7D7"];
 
-const RADIAN = Math.PI / 180;
-const renderCustomizedLabel = ({
-  cx,
-  cy,
-  midAngle,
-  innerRadius,
-  outerRadius,
-  percent,
-  index
-}: any) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
   return (
-    <text
-      x={x}
-      y={y}
-      fill="white"
-      textAnchor={x > cx ? "start" : "end"}
-      dominantBaseline="central"
-    >
-      {/* {`${(percent * 100).toFixed(0)}%`} */}
-    </text>
-  );
-};
-
-const Diagram = () => {
-  return (
-      <PieChart width={180} height={180} >
+      <PieChart width={185} height={185} >
         <Pie
         data={data}
-        // cx={160}
-        // cy={160}
         labelLine={false}
-        label={renderCustomizedLabel}
-        outerRadius={80}
+        outerRadius={90}
         fill="#8884d8"
         dataKey="value"
       >
@@ -53,8 +24,7 @@ const Diagram = () => {
         ))}
        </Pie>
       </PieChart>  
-  )
-    
+  )  
 }
 
 export default Diagram

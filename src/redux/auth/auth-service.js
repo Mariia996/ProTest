@@ -3,7 +3,7 @@ import BaseHttpService from '../../shared/service/base-http-service';
 class AuthService extends BaseHttpService {
   async register(body) {
     try {
-      const {data} = await this.post('auth/register', body);
+      const { data } = await this.post('auth/register', body);
       this.saveToken(data.token);
       return data;
     } catch (error) {}
@@ -11,7 +11,7 @@ class AuthService extends BaseHttpService {
 
   async login(body) {
     try {
-      const {data} = await this.post('auth/login', body);
+      const { data } = await this.post('auth/login', body);
       this.saveToken(data.token);
       return data;
     } catch (error) {}
@@ -27,7 +27,7 @@ class AuthService extends BaseHttpService {
   async currentUser() {
     try {
       this.loadToken();
-      const {data} = await this.get('users/current');
+      const { data } = await this.get('users/current');
       return data;
     } catch (error) {}
   }

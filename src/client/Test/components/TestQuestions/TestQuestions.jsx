@@ -4,7 +4,7 @@ import TestAnswersList from '../TestAnswersList';
 
 import s from './TestQuestions.module.scss';
 
-const TestQuestions = ({ test, questionIdx, handleChange }) => {
+const TestQuestions = ({ test, questionIdx,formData, handleChange }) => {
   return (
     <div className={s.test_wrapper}>
       <div className={s.currentQuestions}>
@@ -14,7 +14,7 @@ const TestQuestions = ({ test, questionIdx, handleChange }) => {
           {test.question}
         </p>
 
-      <TestAnswersList test={test} handleChange={handleChange}/>
+      <TestAnswersList test={test} formData={ formData} handleChange={handleChange}/>
     </div>
   );
 };

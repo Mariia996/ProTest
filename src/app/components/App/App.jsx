@@ -37,8 +37,8 @@ function App() {
           {/* <Route exact path={main} component={MainPage} /> */}
           <PrivatePage exact path={test + '/:typeTest'} component={TestPage} redirectTo={auth} />
           {/* <Route exact path={test} component={TestPage} /> */}
-          <PrivatePage exact path={results} component={ResultsPage} redirectTo={auth} />
-          {/* <Route exact path={results} component={ResultsPage} /> */}
+          {/* <PrivatePage exact path={results} component={ResultsPage} redirectTo={auth} /> */}
+          <Route exact path={results} component={ResultsPage} />
           <PrivatePage exact path={materials} component={UsefulInfoPage} redirectTo={auth} />
           <Route exact path={materials} component={UsefulInfoPage} />
         </Switch>

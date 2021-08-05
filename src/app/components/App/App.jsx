@@ -35,7 +35,7 @@ function App() {
           <Route exact path={contacts} component={ContactsPage} />
           <PrivatePage exact path={main} component={MainPage} redirectTo={auth} />
           {/* <Route exact path={main} component={MainPage} /> */}
-          <PrivatePage exact path={test} component={TestPage} redirectTo={auth} />
+          <PrivatePage exact path={test + '/:typeTest'} component={TestPage} redirectTo={auth} />
           {/* <Route exact path={test} component={TestPage} /> */}
           {/* <PrivatePage exact path={results} component={ResultsPage} redirectTo={auth} /> */}
           <Route exact path={results} component={ResultsPage} />

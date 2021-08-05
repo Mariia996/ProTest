@@ -6,9 +6,6 @@
     &:not(:last-child) {
       margin-bottom: 13px;
     }
-    &:last-child {
-      margin-top: 28px;
-    }
   }
 
   &_label {
@@ -54,11 +51,5 @@
     &_field:last-child {
       margin-top: 0;
     }
-  }
-}
-
-@include desktop {
-  .form_field:last-child {
-    margin-top: 35px;
   }
 }

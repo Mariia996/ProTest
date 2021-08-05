@@ -24,14 +24,9 @@ const ResultsPage = () => {
     //         dispatch(resetResult())
     // }
 
-    const getTests = (type) => {
-        dispatch(fetchTests(type))
-    }
-    
     const handleGoBack = () => {
         // reset()
-        getTests(type)
-        history.push('/test')
+        history.push(`/test/${type}`)
     }
 
     const result = useSelector(state => state.result.resultAnswers, shallowEqual)

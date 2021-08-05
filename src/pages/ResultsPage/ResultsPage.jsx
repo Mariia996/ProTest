@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import {useEffect} from 'react'
 import { useSelector, shallowEqual, useDispatch } from 'react-redux'
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Diagram from '../../client/Results/components/Diagram'
 import Button from '../../shared/components/Button'
 import { getResults } from '../../redux/results/results-operations'
+import {fetchTests} from '../../redux/tests/tests-operations'
 import resetResult  from '../../redux/results/results-actions'
 import countResults from '../../client/Results/components/countResults'
 
@@ -14,23 +15,23 @@ import styles from './ResultsPage.module.scss'
 const ResultsPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
-    dispatch(getResults());
-  }, [dispatch]);
+        dispatch(getResults());
+    }, [dispatch]);
     
     const history = useHistory();
-    const location = useLocation();
 
-    const reset = () => {
-        return dispatch => {
-    dispatch(resetResult())
-  }
+    // const reset = () => {
+    //         dispatch(resetResult())
+    // }
+
+    const getTests = (type) => {
+        dispatch(fetchTests(type))
     }
     
     const handleGoBack = () => {
-        // history.push(location?.state?.from ?? '/')
-        history.push('/test')
         // reset()
-        // history.goBack()
+        getTests(type)
+        history.push('/test')
     }
 
     const result = useSelector(state => state.result.resultAnswers, shallowEqual)
@@ -74,5 +75,3 @@ const ResultsPage = () => {
 }
  
 export default ResultsPage;
-
-//При клике на кнопку очистеть результаты и вернуться на первый вопрос тестов

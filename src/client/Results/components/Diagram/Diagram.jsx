@@ -11,11 +11,11 @@ const Diagram = ({ answer, total }) => {
 const COLORS = ["#FF6B01", "#D7D7D7"];
 
   return (
-      <PieChart width={160} height={160} >
+      <PieChart width={185} height={185} >
         <Pie
         data={data}
         labelLine={false}
-        outerRadius={80}
+        outerRadius={90}
         fill="#8884d8"
         dataKey="value"
       >

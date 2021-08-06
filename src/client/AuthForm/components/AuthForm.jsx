@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import Input from '../../../shared/components/Input'
 import Button from '../../../shared/components/Button'
 import { fields } from './fields'
@@ -7,16 +7,35 @@ import { initialState } from './initialState'
 import { ReactComponent as GoggleSvg } from '../../../images/google.svg'
 import useForm from '../../../shared/hooks/useForm'
 import { logIn, register } from '../../../redux/auth/auth-operations'
+import { error } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
 
 import styles from './AuthForm.module.scss'
 
 const AuthForm = () => {
+    const errorCode = useSelector(state => state.auth.error, shallowEqual)
+    console.log(errorCode);
+
     const [actionType, setActionType] = useState("");
     const dispatch = useDispatch()
     
     const onSubmit = data => {
         const action = (actionType === "login") ? logIn(data) : register(data)
         dispatch(action)
+        // if (errorCode) {
+        //     error({
+        //       text: 'You are already registered',
+        //       delay: 2000
+        //     });
+        //     return
+        // } if (errorCode) {
+        //     error({
+        //       text: 'Incorrect email or password',
+        //       delay: 2000
+        //     });
+        //     return
+        // }
     };
     
     const [data, , handleChange, handleSubmit] = useForm({ initialState,  onSubmit});

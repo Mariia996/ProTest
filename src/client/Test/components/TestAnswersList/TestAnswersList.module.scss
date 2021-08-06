@@ -12,6 +12,7 @@
     @include flex(_, baseline);
     font-size: 10px;
     line-height: 1.2;
+    cursor: pointer;
 
     &::before {
       content: '';

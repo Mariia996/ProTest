@@ -23,15 +23,26 @@ import s from './TestPage.module.scss';
 const TestPage = () => {
     const dispatch = useDispatch();
      const history = useHistory();
-    
+
   const {typeTest} = useParams()
 
   const tests = useSelector(state => getTests(state), shallowEqual);
 
   const [idx, setIdx] = useState(0)
 
-    const [array, formData, handleChange] = useRadioForm()
-    console.log(array);
+  const [array, formData, handleChange] = useRadioForm()
+
+  const handleRightClick = () => {
+    if (array.length === 0 || !array[idx] || array[idx]._id !== tests[idx]._id) {
+      alert({
+        text: 'You must check the answer to continue',
+        delay: 2000
+      });
+      return
+    } else {
+      setIdx(idx + 1)
+    }
+  }
 
   const handleSubmit = (e) => {
       e.preventDefault()
@@ -50,7 +61,7 @@ const TestPage = () => {
   useEffect(() => {
 
  dispatch(fetchTests(typeTest))
-  }, [dispatch])
+  }, [dispatch, typeTest])
 
     return (
     <div className={s.container}>
@@ -63,7 +74,8 @@ const TestPage = () => {
                 <Button className={s.finishBtn}  onClick={handleSubmit}>Finish test</Button>
             </div>
                 {tests[idx] && <TestQuestions test={tests[idx]} formData={ formData} questionIdx={idx} handleChange={handleChange}/>}
-                <Pagination handleLeftClick={() => setIdx(idx - 1)} handleRightClick={() => setIdx(idx + 1)} questionIdx={idx}/>
+          <Pagination handleLeftClick={() => setIdx(idx - 1)}
+            handleRightClick={handleRightClick} questionIdx={idx} />
         </div>
     </div> );
 }

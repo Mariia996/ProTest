@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Button from '../../../../shared/components/Button';
 import { ReactComponent as ArrowRight } from '../../../../images/test-page/vectorRight.svg';
 import { ReactComponent as ArrowLeft } from '../../../../images/test-page/vectorLeft.svg';
@@ -19,3 +21,15 @@ const Pagination = ({ handleLeftClick, handleRightClick, questionIdx }) => {
 }
 
 export default Pagination;
+
+Pagination.defaultProps = {
+    handleLeftClick: () => { },
+    handleRightClick: () => { },
+    questionIdx: 0
+}
+
+Pagination.propTypes = {
+    handleLeftClick: PropTypes.func.isRequired,
+    handleRightClick: PropTypes.func.isRequired,
+    questionIdx: PropTypes.number
+}

@@ -64,7 +64,7 @@
   &Container {
     @include flex(center, center);
     @include tablet {
-      @include flex(start, center);
+      @include flex(_, center);
     }
   }
 }

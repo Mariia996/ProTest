@@ -1,4 +1,6 @@
 import {v4} from 'uuid'
+import PropTypes from 'prop-types';
+
 import s from './TestAnswersList.module.scss';
 
 const TestAnswersList = ({ test, formData, handleChange}) => {
@@ -12,8 +14,8 @@ const TestAnswersList = ({ test, formData, handleChange}) => {
             name={test._id}
             value={answer}
             className={s.visuallyHidden}
-            checked={answer === formData.userAnswer }
-
+            checked={answer === formData.userAnswer}
+            onChange={handleChange}
               />
               <label htmlFor={inputId} className={s.form_label}>
                 <span className={s.text}>{answer}</span>
@@ -23,10 +25,23 @@ const TestAnswersList = ({ test, formData, handleChange}) => {
   })
 
   return (
-  <form className={s.form} onChange={handleChange}>
+  <form className={s.form}>
     {inputElements}
   </form>
   )
 };
 
 export default TestAnswersList;
+
+TestAnswersList.defaultProps = {
+  test: {},
+  formData: {},
+  handleChange: () => {}
+}
+
+TestAnswersList.propTypes = {
+  test: PropTypes.object.isRequired,
+  formData: PropTypes.object,
+  handleChange: PropTypes.func.isRequired
+}
+

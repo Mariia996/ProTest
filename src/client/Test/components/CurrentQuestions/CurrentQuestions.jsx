@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import s from './CurrentQuestions.module.scss';
 
 const CurrentQuestions = ({ questionIdx }) => {
@@ -10,3 +12,11 @@ const CurrentQuestions = ({ questionIdx }) => {
 }
 
 export default CurrentQuestions;
+
+CurrentQuestions.defaultProps = {
+  questionIdx: 0,
+}
+
+CurrentQuestions.propTypes = {
+  questionIdx: PropTypes.number,
+}

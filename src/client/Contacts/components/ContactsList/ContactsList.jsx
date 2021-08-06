@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import { contacts } from '../../../../assets/contacts'
 import ContactsItem from '../ContactsItem'
 

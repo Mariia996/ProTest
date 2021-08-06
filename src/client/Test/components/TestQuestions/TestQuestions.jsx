@@ -1,4 +1,6 @@
-import {v4} from 'uuid'
+import { v4 } from 'uuid'
+import PropTypes from 'prop-types';
+
 import CurrentQuestions from '../CurrentQuestions';
 import TestAnswersList from '../TestAnswersList';
 
@@ -20,3 +22,17 @@ const TestQuestions = ({ test, questionIdx,formData, handleChange }) => {
 };
 
 export default TestQuestions;
+
+TestQuestions.defaultProps = {
+  test: {},
+  questionIdx: 0,
+  formData: {},
+  handleChange: () => {}
+}
+
+TestQuestions.propTypes = {
+  test: PropTypes.object.isRequired,
+  questionIdx: PropTypes.number,
+  formData: PropTypes.object,
+  handleChange: PropTypes.func.isRequired
+}

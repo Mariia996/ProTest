@@ -1,6 +1,6 @@
 import React from "react";
 import { PieChart, Pie, Cell} from "recharts";
-
+import PropTypes from 'prop-types';
 
 const Diagram = ({ answer, total }) => {
   const data = [
@@ -28,3 +28,15 @@ const COLORS = ["#FF6B01", "#D7D7D7"];
 }
 
 export default Diagram
+
+Diagram.defaultProps = {
+    answer: 0,
+    total: 12,
+
+}
+
+Diagram.propTypes = {
+    answer: PropTypes.number,
+    total: PropTypes.number,
+}
+

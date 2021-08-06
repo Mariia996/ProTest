@@ -34,7 +34,6 @@ export const logIn = body => async dispatch => {
     const data = await authService.login(body);
     dispatch(loginSuccess(data));
   } catch (error) {
-    console.log(error.response);
     dispatch(loginError(error));
   }
 };

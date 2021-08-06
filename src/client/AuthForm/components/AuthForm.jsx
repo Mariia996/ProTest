@@ -1,13 +1,12 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import Input from '../../../shared/components/Input'
-import Button from '../../../shared/components/Button'
-import { fields } from './fields'
-import { initialState } from './initialState'
-import { ReactComponent as GoggleSvg } from '../../../images/google.svg'
-import useForm from '../../../shared/hooks/useForm'
-import { logIn, register } from '../../../redux/auth/auth-operations'
+import Input from '../../../shared/components/Input';
+import Button from '../../../shared/components/Button';
+import { fields } from './fields';
+import { initialState } from './initialState';
+import { ReactComponent as GoggleSvg } from '../../../images/google.svg';
+import useForm from '../../../shared/hooks/useForm';
+import { logIn, register } from '../../../redux/auth/auth-operations';
 import { error } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -15,42 +14,28 @@ import '@pnotify/core/dist/BrightTheme.css';
 import styles from './AuthForm.module.scss';
 
 const AuthForm = () => {
-    const errorCode = useSelector(state => state.auth.error, shallowEqual)
-    console.log(errorCode);
+  const errorCode = useSelector(state => state.auth.error, shallowEqual);
 
-    const [actionType, setActionType] = useState("");
-    const dispatch = useDispatch()
-    
-    const onSubmit = data => {
-        const action = (actionType === "login") ? logIn(data) : register(data)
-        dispatch(action)
-        // if (errorCode) {
-        //     error({
-        //       text: 'You are already registered',
-        //       delay: 2000
-        //     });
-        //     return
-        // } if (errorCode) {
-        //     error({
-        //       text: 'Incorrect email or password',
-        //       delay: 2000
-        //     });
-        //     return
-        // }
-
-    const [actionType, setActionType] = useState('');
+  const [actionType, setActionType] = useState('');
   const dispatch = useDispatch();
 
   const onSubmit = data => {
     const action = actionType === 'login' ? logIn(data) : register(data);
     dispatch(action);
   };
-
-  const [data, , handleChange, handleSubmit] = useForm({
-    initialState,
-    onSubmit,
-  });
-
+    
+  const [data, , handleChange, handleSubmit] = useForm({ initialState, onSubmit });
+    useEffect(() => {
+        if (errorCode) {
+            const errorMessage = (errorCode.response.status === 409) ? 'You are already registered' : 'Incorrect email or password'
+            console.log(errorMessage);
+            error({
+              text: errorMessage,
+              delay: 2000
+            }); 
+        } 
+    }, [errorCode])
+        
   useEffect(() => {
     window.gapi.load('auth2', function () {
       window.gapi.auth2
@@ -92,45 +77,15 @@ const AuthForm = () => {
           You can use your Google Account to authorize:
         </p>
         <div className={styles.googleBtnContainer}>
-          <Button onClick={signIn} className={styles.googleBtn}>
-            <GoggleSvg className={styles.googleLogo} />
-            Google
-          </Button>
+          <Button onClick={signIn} className={styles.googleBtn}><GoggleSvg className={styles.googleLogo} />Google</Button>
         </div>
-
-        {/* <GoogleLogin
-            clientId="696692531480-0tf1tisbdvpba2sausc94tab3ef0rb2n.apps.googleusercontent.com"
-            buttonText="Google"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={'single_host_origin'}
-          /> */}
-
-        <p className={styles.formGroupText}>
-          Or login to our app using e-mail and password:
-        </p>
+        <p className={styles.formGroupText}>Or login to our app using e-mail and password:</p>
         <form onSubmit={handleSubmit}>
           <Input {...fields.email} value={data.email} onChange={handleChange} />
-          <Input
-            {...fields.password}
-            value={data.password}
-            onChange={handleChange}
-          />
+          <Input {...fields.password} value={data.password} onChange={handleChange}/>
           <div className={styles.buttonContainer}>
-            <Button
-              className={styles.button}
-              type="submit"
-              onClick={() => setActionType('login')}
-            >
-              Sign in
-            </Button>
-            <Button
-              className={styles.button}
-              type="submit"
-              onClick={() => setActionType('register')}
-            >
-              Sign up
-            </Button>
+            <Button className={styles.button} type="submit" onClick={() => setActionType('login')}>Sign in</Button>
+            <Button className={styles.button} type="submit" onClick={() => setActionType('register')}>Sign up</Button>
           </div>
         </form>
       </div>

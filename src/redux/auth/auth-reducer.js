@@ -46,7 +46,7 @@ const error = createReducer(initialStateError, {
   [actions.loginSuccess]: () => initialStateError,
   [actions.logoutError]: (_, { payload }) => payload,
   [actions.logoutSuccess]: () => initialStateError,
-  [actions.getCurrentUserError]: (_, { payload }) => payload,
+  [actions.getCurrentUserError]: () => initialStateError,
   [actions.getCurrentUserSuccess]: () => initialStateError,
 });
 

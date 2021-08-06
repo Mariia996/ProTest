@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import Input from '../../../shared/components/Input'
 import Button from '../../../shared/components/Button'
@@ -23,20 +23,17 @@ const AuthForm = () => {
     const onSubmit = data => {
         const action = (actionType === "login") ? logIn(data) : register(data)
         dispatch(action)
-        // if (errorCode) {
-        //     error({
-        //       text: 'You are already registered',
-        //       delay: 2000
-        //     });
-        //     return
-        // } if (errorCode) {
-        //     error({
-        //       text: 'Incorrect email or password',
-        //       delay: 2000
-        //     });
-        //     return
-        // }
     };
+
+    useEffect(() => {
+        if (errorCode) {
+            const errorMessage = errorCode === 409 ? 'You are already registered':'Incorrect email or password'
+            error({
+              text: errorMessage,
+              delay: 2000
+            }); 
+        } 
+    }, [errorCode])
     
     const [data, , handleChange, handleSubmit] = useForm({ initialState,  onSubmit});
     return  (

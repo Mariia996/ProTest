@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useDispatch, useSelector, shallowEqual} from 'react-redux';
-import { logOut } from '../../redux/auth/auth-operations';
+import { useSelector, shallowEqual} from 'react-redux';
 import { NavLink } from "react-router-dom";
 
 import Navbar from '../Navbar/components/Navbar';
@@ -25,9 +24,11 @@ function Header() {
 
     const isAuthorized = useSelector(state => getIsAuthenticated(state), shallowEqual);
 
+    const toggleBurger = () => {
+        setOpenBurger(!openBurger)
+    }
     const toggleModal = () => {
         setOpenModal(!openModal)
-        console.log(openModal);
     }
     
     return (
@@ -59,7 +60,7 @@ function Header() {
 
                     {openBurger && <BurgerMenu>
                     <div className={styles.wrapper_nav_list}>
-                       {isAuthorized ? <NavMenuList/> : <NavAuth/>}
+                        {isAuthorized ? <NavMenuList onClose={toggleBurger}/> : <NavAuth/>}
                     </div>
                     {openModal && (<Modal onClose={toggleModal}><LogOutModal onClose={toggleModal} /></Modal>)} 
                   {isAuthorized && <LogOut className={styles.logout_icon} onClick={toggleModal} />}

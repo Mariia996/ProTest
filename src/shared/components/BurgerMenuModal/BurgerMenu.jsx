@@ -13,11 +13,7 @@ const BurgerMenu = ({ onClose, children}) => {
     }, [onClose]);
 
     const [openBurger, setOpenBurger] = useState(false)
-
-    // const toggleBurger = () => {
-    //     setOpenBurger(!openBurger);
-    // }
-
+    
     const handleKeyDown = useCallback(
         (e) => {
             if (e.code === "Escape") {

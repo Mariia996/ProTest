@@ -23,6 +23,7 @@ export const register = body => async dispatch => {
     const data = await authService.register(body);
     dispatch(registerSuccess(data));
   } catch (error) {
+    console.log(error.response.status);
     dispatch(registerError(error));
   }
 };

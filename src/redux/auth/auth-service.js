@@ -6,7 +6,9 @@ class AuthService extends BaseHttpService {
       const { data } = await this.post('auth/register', body);
       this.saveToken(data.token);
       return data;
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   }
 
   async login(body) {
@@ -14,14 +16,18 @@ class AuthService extends BaseHttpService {
       const { data } = await this.post('auth/login', body);
       this.saveToken(data.token);
       return data;
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   }
 
   async logout() {
     try {
       await this.post('auth/logout');
       this.removeToken();
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   }
 
   async currentUser() {
@@ -29,7 +35,9 @@ class AuthService extends BaseHttpService {
       this.loadToken();
       const { data } = await this.get('users/current');
       return data;
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   }
 }
 

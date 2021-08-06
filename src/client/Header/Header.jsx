@@ -24,9 +24,11 @@ function Header() {
 
     const isAuthorized = useSelector(state => getIsAuthenticated(state), shallowEqual);
 
+    const toggleBurger = () => {
+        setOpenBurger(!openBurger)
+    }
     const toggleModal = () => {
         setOpenModal(!openModal)
-        console.log(openModal);
     }
 
     return (
@@ -58,7 +60,7 @@ function Header() {
 
                     {openBurger && <BurgerMenu>
                     <div className={styles.wrapper_nav_list}>
-                       {isAuthorized ? <NavMenuList/> : <NavAuth/>}
+                        {isAuthorized ? <NavMenuList onClose={toggleBurger}/> : <NavAuth/>}
                     </div>
                     {openModal && (<Modal onClose={toggleModal}><LogOutModal onClose={toggleModal} /></Modal>)}
                   {isAuthorized && <LogOut className={styles.logout_icon} onClick={toggleModal} />}

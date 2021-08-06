@@ -8,7 +8,7 @@ const Diagram = ({ answer, total }) => {
   { name: "Group B", value: answer},
 ];
 
-const COLORS = ["#FF6B01", "#D7D7D7"];
+const COLORS = ["#D7D7D7","#FF6B01"];
 
   return (
       <PieChart width={185} height={185} >

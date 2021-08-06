@@ -9,6 +9,8 @@ import NavMenuList from '../Navbar/components/NavMenuList';
 import NavAuth from '../Navbar/components/NavAuth';
 import UserInfo from '../Navbar/components/UserInfo';
 import Logo from '../../shared/components/Logo';
+import Modal from '../../shared/components/Modal'
+import LogOutModal from '../LogOutModal'
 
 import styles from './Header.module.scss';
 
@@ -18,12 +20,16 @@ import { ReactComponent as LogOut } from '../../images/burger-menu/logout.svg';
 import { getIsAuthenticated } from '../../redux/auth/auth-selectors';
 
 function Header() {
-    const dispatch = useDispatch()
-    const onLogout = () => dispatch(logOut())
-
     const [openBurger, setOpenBurger] = useState(false)
+    const [openModal, setOpenModal] = useState(false)
+
     const isAuthorized = useSelector(state => getIsAuthenticated(state), shallowEqual);
 
+    const toggleModal = () => {
+        setOpenModal(!openModal)
+        console.log(openModal);
+    }
+    
     return (
       <header className={styles.header}>
             <div className={styles.container}>
@@ -55,15 +61,15 @@ function Header() {
                     <div className={styles.wrapper_nav_list}>
                        {isAuthorized ? <NavMenuList/> : <NavAuth/>}
                     </div>
-                  {isAuthorized && <LogOut className={styles.logout_icon} onClick={onLogout} />}
+                    {openModal && (<Modal onClose={toggleModal}><LogOutModal onClose={toggleModal} /></Modal>)} 
+                  {isAuthorized && <LogOut className={styles.logout_icon} onClick={toggleModal} />}
                 </BurgerMenu>}
-
-
+                
                 {isAuthorized && <div className={styles.logout_wrapper}>
-                <LogOut className={styles.btnLogOut} onClick={onLogout} />
+                 {openModal && (<Modal onClose={toggleModal}><LogOutModal onClose={toggleModal} /></Modal>)}   
+                <LogOut className={styles.btnLogOut} onClick={toggleModal} />
                 </div>}
             </div>
-
          </header>
     )
 };

@@ -15,6 +15,7 @@ import styles from './AuthForm.module.scss'
 
 const AuthForm = () => {
     const errorCode = useSelector(state => state.auth.error, shallowEqual)
+    console.log(errorCode);
 
     const [actionType, setActionType] = useState("");
     const dispatch = useDispatch()
@@ -22,17 +23,19 @@ const AuthForm = () => {
     const onSubmit = data => {
         const action = (actionType === "login") ? logIn(data) : register(data)
         dispatch(action)
-        if (errorCode.code === 409) {
-            error({
-              text: 'You are already registered',
-              delay: 2000
-          });
-        } if (errorCode.code === 400) {
-            error({
-              text: 'You must continue to finish test',
-              delay: 2000
-          });
-        }
+        // if (errorCode) {
+        //     error({
+        //       text: 'You are already registered',
+        //       delay: 2000
+        //     });
+        //     return
+        // } if (errorCode) {
+        //     error({
+        //       text: 'Incorrect email or password',
+        //       delay: 2000
+        //     });
+        //     return
+        // }
     };
     
     const [data, , handleChange, handleSubmit] = useForm({ initialState,  onSubmit});

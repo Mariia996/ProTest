@@ -11,7 +11,7 @@ import { error } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 
-import styles from './AuthForm.module.scss'
+import styles from './AuthForm.module.scss';
 
 const AuthForm = () => {
     const errorCode = useSelector(state => state.auth.error, shallowEqual)
@@ -35,7 +35,9 @@ const AuthForm = () => {
         } 
     }, [errorCode])
     
-    const [data, , handleChange, handleSubmit] = useForm({ initialState,  onSubmit});
+    const [data, , handleChange, handleSubmit] = useForm({ initialState, onSubmit });
+    
+
     return  (
     <div className={styles.authFormContainer} >
         <div className={styles.formGroup}>
@@ -54,8 +56,9 @@ const AuthForm = () => {
                 </div>
             </form>
         </div>
-    </div>
-   )
-}
+      </div>
+  );
+};
 
 export default AuthForm;
+

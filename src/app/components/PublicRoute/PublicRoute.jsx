@@ -24,4 +24,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(PublicRoute);
-// export default PublicRoute;

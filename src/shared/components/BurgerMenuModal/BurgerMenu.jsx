@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
 
 import styles from './BurgerMenu.module.scss';
 
@@ -39,3 +40,11 @@ const BurgerMenu = ({ onClose, children}) => {
 
 
 export default BurgerMenu;
+
+BurgerMenu.defaultProps = {
+    onClose: () => {}
+}
+
+BurgerMenu.propTypes = {
+    onClose: PropTypes.func.isRequired
+}

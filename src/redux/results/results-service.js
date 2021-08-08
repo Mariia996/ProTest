@@ -5,7 +5,9 @@ class ResultsService extends BaseHttpService {
     try {
       const { data } = await this.post('tests/result', body);
       return data;
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   }
 }
 

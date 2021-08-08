@@ -4,14 +4,12 @@ import Input from '../../../shared/components/Input';
 import Button from '../../../shared/components/Button';
 import { fields } from './fields';
 import { initialState } from './initialState';
-import { ReactComponent as GoggleSvg } from '../../../images/google.svg';
 import useForm from '../../../shared/hooks/useForm';
 import { logIn, register, googleLogin } from '../../../redux/auth/auth-operations';
-import { error } from '@pnotify/core';
 import GoogleLogin from 'react-google-login';
-import { logIn, register } from '../../../redux/auth/auth-operations';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import styles from './AuthForm.module.scss';
 
 const AuthForm = () => {
@@ -33,7 +31,7 @@ const AuthForm = () => {
             errorMessage,
             { position: toast.POSITION.TOP_RIGHT },
           );
-        } 
+        }
     }, [errorCode])
 
   const responseSuccessGoogle = ({tokenId}) => {
@@ -41,7 +39,10 @@ const AuthForm = () => {
   }
 
   const responseErrorGoogle = () => {
-
+     toast.error(
+            'Google Sign In was unsuccessful. Try Again Later',
+            { position: toast.POSITION.TOP_RIGHT },
+          );
   }
   return (
       <>

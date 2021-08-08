@@ -5,7 +5,9 @@ class TestsService extends BaseHttpService {
     try {
       const { data } = await this.get(`tests/${type}`);
       return data;
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   }
 }
 

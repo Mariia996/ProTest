@@ -47,7 +47,7 @@
 .googleBtn {
   @include flex(_, center);
   height: 51px;
-  background: #fafafa;
+  background-color: #fafafa;
   border: none;
   color: #000000;
   font-weight: 700;
@@ -57,6 +57,7 @@
   text-align: center;
   text-transform: capitalize;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
   &Container {
     @include flex(center, center);
     margin-bottom: 30px;

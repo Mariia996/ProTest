@@ -1,4 +1,4 @@
-@import "../../styles/base";
+@import '../../styles/base';
 
 .backdrop {
   position: fixed;
@@ -31,6 +31,7 @@
   right: 10px;
   width: 14px;
   height: 14px;
+  cursor: pointer;
 
   @include tablet {
     & {

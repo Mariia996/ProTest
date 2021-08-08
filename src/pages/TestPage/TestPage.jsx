@@ -5,9 +5,8 @@ import {
 } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { alert} from '@pnotify/core';
-import '@pnotify/core/dist/PNotify.css';
-import '@pnotify/core/dist/BrightTheme.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { getTests } from '../../redux/tests/tests-selectors';
 import useRadioForm from '../../shared/hooks/useRadioForm';
@@ -34,11 +33,7 @@ const TestPage = () => {
 
   const handleRightClick = () => {
     if (array.length === 0 || !array[idx] || array[idx]._id !== tests[idx]._id) {
-      alert({
-        text: 'You must check the answer to continue',
-        delay: 2000
-      });
-      return
+      toast.warn('You must check the answer to continue', { position: toast.POSITION.TOP_RIGHT });
     } else {
       setIdx(idx + 1)
     }
@@ -46,12 +41,8 @@ const TestPage = () => {
 
   const handleSubmit = (e) => {
       e.preventDefault()
-      if (array.length < 12) {
-          alert({
-              text: 'You must continue to finish test',
-              delay: 2000
-          });
-          return
+    if (array.length < 12) {
+        toast.warn('You must continue to finish test', { position: toast.POSITION.TOP_RIGHT });
       } else {
           dispatch(getResults(array))
           history.push('/results')
@@ -63,8 +54,9 @@ const TestPage = () => {
  dispatch(fetchTests(typeTest))
   }, [dispatch, typeTest])
 
-    return (
-    <div className={s.container}>
+  return (
+    <>
+      <div className={s.container}>
         <div className={s.wrapper}>
           <div className={s.titleContainer}>
 
@@ -77,7 +69,9 @@ const TestPage = () => {
           <Pagination handleLeftClick={() => setIdx(idx - 1)}
             handleRightClick={handleRightClick} questionIdx={idx} />
         </div>
-    </div> );
+      </div>
+      <ToastContainer />
+    </>);
 }
 
 export default TestPage;

@@ -9,9 +9,9 @@ import useForm from '../../../shared/hooks/useForm';
 import { logIn, register, googleLogin } from '../../../redux/auth/auth-operations';
 import { error } from '@pnotify/core';
 import GoogleLogin from 'react-google-login';
-
-import '@pnotify/core/dist/PNotify.css';
-import '@pnotify/core/dist/BrightTheme.css';
+import { logIn, register } from '../../../redux/auth/auth-operations';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from './AuthForm.module.scss';
 
 const AuthForm = () => {
@@ -29,12 +29,11 @@ const AuthForm = () => {
     useEffect(() => {
         if (errorCode) {
             const errorMessage = (errorCode.response.status === 409) ? 'You are already registered' : 'Incorrect email or password'
-            console.log(errorMessage);
-            error({
-              text: errorMessage,
-              delay: 2000
-            });
-        }
+            toast.error(
+            errorMessage,
+            { position: toast.POSITION.TOP_RIGHT },
+          );
+        } 
     }, [errorCode])
 
   const responseSuccessGoogle = ({tokenId}) => {
@@ -44,8 +43,8 @@ const AuthForm = () => {
   const responseErrorGoogle = () => {
 
   }
-
   return (
+      <>
     <div className={styles.authFormContainer}>
       <div className={styles.formGroup}>
         <p className={styles.formGroupText}>
@@ -72,6 +71,8 @@ const AuthForm = () => {
         </form>
       </div>
     </div>
+ <ToastContainer />
+ </>
   );
 };
 

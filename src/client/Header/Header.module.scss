@@ -89,6 +89,7 @@
 
   .btnLogOut {
     display: none;
+    cursor: pointer;
     @include tablet {
       display: block;
       border: none;

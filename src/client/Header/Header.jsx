@@ -30,7 +30,7 @@ function Header() {
     const toggleModal = () => {
         setOpenModal(!openModal)
     }
-    
+
     return (
       <header className={styles.header}>
             <div className={styles.container}>
@@ -62,12 +62,12 @@ function Header() {
                     <div className={styles.wrapper_nav_list}>
                         {isAuthorized ? <NavMenuList onClose={toggleBurger}/> : <NavAuth/>}
                     </div>
-                    {openModal && (<Modal onClose={toggleModal}><LogOutModal onClose={toggleModal} /></Modal>)} 
+                    {openModal && (<Modal onClose={toggleModal}><LogOutModal onClose={toggleModal} /></Modal>)}
                   {isAuthorized && <LogOut className={styles.logout_icon} onClick={toggleModal} />}
                 </BurgerMenu>}
-                
+
                 {isAuthorized && <div className={styles.logout_wrapper}>
-                 {openModal && (<Modal onClose={toggleModal}><LogOutModal onClose={toggleModal} /></Modal>)}   
+                 {openModal && (<Modal onClose={toggleModal}><LogOutModal onClose={toggleModal} /></Modal>)}
                 <LogOut className={styles.btnLogOut} onClick={toggleModal} />
                 </div>}
             </div>

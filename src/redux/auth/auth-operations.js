@@ -13,6 +13,9 @@ import {
   getCurrentUserRequest,
   getCurrentUserSuccess,
   getCurrentUserError,
+  loginGoogleRequest,
+  loginGoogleSuccess,
+  loginGoogleError
 } from './auth-actions';
 
 const authService = new AuthService();
@@ -37,6 +40,16 @@ export const logIn = body => async dispatch => {
     dispatch(loginError(error));
   }
 };
+
+export const googleLogin = body => async dispatch => {
+  dispatch(loginGoogleRequest());
+  try {
+    const data = await authService.loginGoogle(body);
+    dispatch(loginGoogleSuccess(data));
+  } catch (error) {
+    dispatch(loginGoogleError(error));
+  }
+}
 
 export const logOut = () => async dispatch => {
   dispatch(logoutRequest());

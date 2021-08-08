@@ -8,6 +8,10 @@ export const loginRequest = createAction('auth/loginRequest');
 export const loginSuccess = createAction('auth/loginSuccess');
 export const loginError = createAction('auth/loginError');
 
+export const loginGoogleRequest = createAction('auth/loginGoogleRequest');
+export const loginGoogleSuccess = createAction('auth/loginGoogleSuccess');
+export const loginGoogleError = createAction('auth/loginGoogleError');
+
 export const logoutRequest = createAction('auth/logoutRequest');
 export const logoutSuccess = createAction('auth/logoutSuccess');
 export const logoutError = createAction('auth/logoutError');
@@ -29,6 +33,9 @@ const actions = {
   getCurrentUserRequest,
   getCurrentUserSuccess,
   getCurrentUserError,
+  loginGoogleRequest,
+  loginGoogleSuccess,
+  loginGoogleError
 };
 
 export default actions;

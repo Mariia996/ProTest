@@ -17,6 +17,10 @@ const useRadioForm = () => {
     });
   };
 
+  const resetFormData = () => {
+    setFormData(initialState)
+  }
+
   useEffect(() => {
     if (array.some(({ _id }) => _id === formData._id)) {
       const newArray = array.map(item =>
@@ -31,7 +35,7 @@ const useRadioForm = () => {
     }
   }, [formData]);
 
-  return [array, formData, handleChange];
+  return { array, formData, resetFormData, handleChange };
 };
 
 export default useRadioForm;

@@ -29,12 +29,13 @@ const TestPage = () => {
 
   const [idx, setIdx] = useState(0)
 
-  const [array, formData, handleChange] = useRadioForm()
+  const { array, formData, resetFormData, handleChange } = useRadioForm()
 
   const handleRightClick = () => {
     if (array.length === 0 || !array[idx] || array[idx]._id !== tests[idx]._id) {
       toast.warn('You must check the answer to continue', { position: toast.POSITION.TOP_RIGHT });
     } else {
+      resetFormData()
       setIdx(idx + 1)
     }
   }

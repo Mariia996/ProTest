@@ -72,7 +72,7 @@
   }
 
   .navbar_wrapper {
-    @include flex(center, center);
+    @include flex(space-between, center);
   }
   .nav_contacts_wrapper {
     @include flex;

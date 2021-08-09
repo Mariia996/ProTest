@@ -1,7 +1,14 @@
+@import '../../../../shared/styles/base';
+
 .contactsList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
-    grid-gap: 20px;
+  @include grid(1, repeat);
+  grid-gap: 20px;
+
+  @include tablet {
+    @include grid(2, repeat);
   }
 
-  
+  @include desktop {
+    @include grid(4, repeat);
+  }
+}

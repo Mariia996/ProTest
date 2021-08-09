@@ -3,11 +3,11 @@
 
 .authPage {
   &Container {
-    margin-top: 39px;
-    margin-bottom: 50px;
+    padding-top: 39px;
+    padding-bottom: 50px;
     @include tablet {
-      margin-top: 80px;
-      margin-bottom: 70px;
+      padding-top: 80px;
+      padding-bottom: 70px;
     }
   }
   &TextWrapper {

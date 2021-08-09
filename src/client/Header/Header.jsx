@@ -60,7 +60,7 @@ function Header() {
 
                     {openBurger && <BurgerMenu>
                     <div className={styles.wrapper_nav_list}>
-                        {isAuthorized ? <NavMenuList onClose={toggleBurger}/> : <NavAuth/>}
+                        {isAuthorized ? <NavMenuList onClose={toggleBurger} /> : <NavAuth onClick={toggleBurger}/>}
                     </div>
                     {openModal && (<Modal onClose={toggleModal}><LogOutModal onClose={toggleModal} /></Modal>)}
                   {isAuthorized && <LogOut className={styles.logout_icon} onClick={toggleModal} />}

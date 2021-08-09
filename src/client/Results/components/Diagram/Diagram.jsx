@@ -3,8 +3,10 @@ import { PieChart, Pie, Cell} from "recharts";
 import PropTypes from 'prop-types';
 
 const Diagram = ({ answer, total }) => {
+  const incorrectAnswer = total - answer
+
   const data = [
-  { name: "Group A", value:  total},
+  { name: "Group A", value:  incorrectAnswer},
   { name: "Group B", value: answer},
 ];
 
@@ -23,8 +25,8 @@ const COLORS = ["#D7D7D7","#FF6B01"];
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
        </Pie>
-      </PieChart>  
-  )  
+      </PieChart>
+  )
 }
 
 export default Diagram
